@@ -320,7 +320,7 @@ a:hover {
   background-clip: text;
 }
 .pricing {
-  padding: 50px 0 0 0;
+  padding: 50px 0;
 }
 
 .pricing .section-title {
@@ -1014,7 +1014,7 @@ a:hover {
 /* ===== LOCATIONS SECTION ===== */
 /* Complexes section */
 .complexes { 
-  padding: 0 0 var(--spacing-4xl) 0; 
+  padding: var(--spacing-xl) 0; 
 }
 
 .complex-card {
@@ -1594,8 +1594,12 @@ a:hover {
   margin-bottom: 1.75rem !important;
 }
 
-.no-line-height{
+.wave{
   line-height: 0;
+}
+
+.wave img{
+  object-fit: contain;
 }
 
 .black{
