@@ -50,7 +50,7 @@
                     <img class="burger-icon" src="src/menu-burger.svg"/>
                     <div class="logo-container">
                         <div class="nav-logo mobile-logo">
-                            <img class="logo-img" src="src/white-logo.png" alt="Auto Miami" class="logo-img">
+                            <img class="logo-img" id="logo-img" onclick="logoImgClick()" src="src/logo-black-text.png" alt="Auto Miami" class="logo-img">
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                         <a href="#services" class="nav-link">Услуги</a>
                     </li>
                     <li class="nav-logo">
-                        <img class="logo-img" src="src/white-logo.png" alt="Auto Miami" class="logo-img">
+                        <img class="logo-img" src="src/logo-black-text.png" alt="Auto Miami" class="logo-img">
                     </li>
                     <!-- <li class="nav-item">
                         <a href="#about" class="nav-link">За нас</a>
@@ -141,7 +141,7 @@
             </a>
             <a class="mobile-link-options mobile-link animate__animated animate__fadeInLeft animate__delay-1800ms" href="#miami33">
                  <div>
-                    <p class="main-anchor">Маями 33</p>
+                    <p class="main-anchor">Маями 4</p>
                     <div class = "border-bottom-anchor"></div>
                     <p class="secondary-anchor">бул. „Рожен“ 115, гр. София</p>
                 </div>
@@ -304,12 +304,11 @@
         <div class="container">
             <div class="section-header pricing-header">
                 <h2 class="section-title">Цени</h2>
-                <p class="section-subtitle pricing-subtitle black">Каним ви в най-близкия автокомплекс за консултация и индивидуална оферта</p>
             </div>
             <div class="section-content-split">
                 <div class="section-text">
-                    <p class="section-subtitle pricing-text black">Поради голямото разнообразие от услуги и специфики на автомобилите, крайната цена се определя след оглед. Нашите специалисти ще ви препоръчат най-доброто решение и ще изготвят прозрачна оферта.</p>
-                    <p class="section-subtitle pricing-text black">Елате без записване или уговорете час по телефона.</p>
+                    <p class="section-subtitle pricing-text black">Поради голямото разнообразие от услуги и специфики на автомобилите, крайната цена се определя след оглед. Нашите специалисти ще ви препоръчат най-доброто решение и ще изготвят прозрачна оферта.</p>                    
+                    <p class="section-subtitle pricing-subtitle black">Каним ви в най-близкия автокомплекс за консултация и индивидуална оферта</p>
                     <a href="#complexes" class="btn btn-hero-primary btn-pricing">
                         <span>Нашите комплекси</span>
                         <i class="fas fa-location-dot"></i>
@@ -405,10 +404,10 @@
 
             <article class="complex-card" id="miami33">
                 <div class="complex-media">
-                    <img src="src/img/outside.jpg" alt="Автокомплекс Маями 33">
+                    <img src="src/img/outside.jpg" alt="Автокомплекс Маями 4">
                 </div>
                 <div class="complex-info">
-                    <h3>Маями 33</h3>
+                    <h3>Маями 4</h3>
                     <p class="complex-address">бул. „Рожен“ 115, гр. София</p>
                     <div class="complex-contacts">
                         <p><i class="fas fa-phone"></i> +359 888 444 444</p>
@@ -435,11 +434,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>AutoComplex Miami</h3>
-                    <p>Вашият доверен партньор за всички автомобилни нужди в Маями.</p>
+                    <img class="logo-img-footer" id="logo-img" src="src/logo-white-text.png" alt="Auto Miami" class="logo-img">
+                    <p>Вашият доверен партньор за всички автомобилни нужди в София.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/AutoMiami33" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a target="_blank" rel="noopener noreferrer" href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-google"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-yelp"></i></a>
                     </div>
@@ -447,20 +446,32 @@
                 
                 <div class="footer-section">
                     <h4>Навигация</h4>
-                    <ul>
-                        <li><a href="#home">Начало</a></li>
-                        <li><a href="#services">Услуги</a></li>
-                        <li><a href="#complexes">Автокомплекси</a></li>
-                        <li><a href="#insurance">Застрахователни партньори</a></li>
-                    </ul>
+                    <div class="footer-section-nav">
+                        <div>
+                            <ul>
+                                <li><a href="#home">Начало</a></li>
+                                <li><a href="#services">Услуги</a></li>
+                                <li><a href="#pricing">Цени</a></li>
+                                <li><a href="#complexes">Автокомплекси</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="footer-complexes">
+                                <li><a href="#miami1">Маями 1</a></li>
+                                <li><a href="#miami2">Маями 2</a></li>
+                                <li><a href="#miami3">Маями 3</a></li>
+                                <li><a href="#miami33">Маями 4</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Контакт</h4>
                     <ul>
-                        <li><i class="fas fa-phone"></i> (305) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@autocomplexmiami.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Miami, Florida</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel: 0883363933">088 336 3933</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto: 33@autocomplexmiami.com">33@autocomplexmiami.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <a>София, България</a></li>
                     </ul>
                 </div>
             </div>

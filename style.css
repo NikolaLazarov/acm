@@ -1,17 +1,3 @@
-.btn-pricing {
-  margin-top: 16px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.pricing .section-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 15px;
-}
 /* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
   /* Colors */
@@ -191,9 +177,6 @@ header{
   width: 24 px;
 }
 
-
-
-
 /* ===== CUSTOM CURSOR ===== */
 .cursor {
   position: fixed;
@@ -320,7 +303,7 @@ a:hover {
   background-clip: text;
 }
 .pricing {
-  padding: 50px 0;
+  padding: var(--spacing-2xl) 0;
 }
 
 .pricing .section-title {
@@ -329,6 +312,21 @@ a:hover {
 
 .pricing .section-content-split {
   gap: var(--spacing-4xl);
+}
+
+.btn-pricing {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pricing .section-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-xl);
 }
 
 .section-red .section-title,
@@ -463,11 +461,6 @@ a:hover {
   margin-left: 10px;
 }
 
-.logo-img{
-  zoom: 275%;
-  margin-top: 3px;
-}
-
 .mobile-logo{
   margin-right: 24px;
   justify-content: center;
@@ -479,7 +472,13 @@ a:hover {
 .logo-img {
   width: 40px;
   height: 40px;
+  zoom: 275%;
+  margin-top: 3px;
   object-fit: contain;
+}
+
+.logo-img-footer{
+  height: 50px;
 }
 
 .nav-menu {
@@ -1186,7 +1185,7 @@ a:hover {
 .footer {
   background: var(--color-black);
   color: var(--color-white);
-  padding: var(--spacing-4xl) 0 var(--spacing-xl) 0;
+  padding: var(--spacing-3xl) 0 var(--spacing-xl) 0;
 }
 
 .footer-content {
@@ -1224,6 +1223,12 @@ a:hover {
   color: var(--color-primary);
 }
 
+.footer-section-nav{
+  display: flex;
+  flex-direction: row;
+  gap: 33%;
+}
+
 .social-links {
   display: flex;
   gap: var(--spacing-md);
@@ -1253,6 +1258,12 @@ a:hover {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.6);
 }
+
+i + a { 
+  color: var(--color-white) !important;
+  margin-left: 5px;
+}
+
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1024px) {
@@ -1331,7 +1342,7 @@ a:hover {
   
   .footer-content {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -1608,6 +1619,8 @@ a:hover {
 
 .pricing-text{
   text-align: center;
+  border: var(--color-primary) 3px solid;
+  padding: 20px 40px
 }
 
 .pricing-header{
@@ -1615,5 +1628,6 @@ a:hover {
 }
 
 .pricing-subtitle{
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-lg);
 }
+

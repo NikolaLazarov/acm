@@ -67,6 +67,7 @@ function initializeApp() {
     initPackageCards();
     initMobileDrawer();
     initMobileDrawerSecondary();
+    initLogoNavigation();
 }
 
 // ===== SMOOTH SCROLLING WITH LENIS =====
@@ -90,7 +91,7 @@ function initSmoothScroll() {
     requestAnimationFrame(raf);
 
     // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]', '#logo-img').forEach(anchor => {
         const header = document.getElementById('main-header');
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -488,23 +489,7 @@ function initGSAPAnimations() {
         }
     });
 
-    // Insurance companies animation
-    gsap.fromTo('.company-logo', {
-        scale: 0,
-        opacity: 0,
-        rotation: 180
-    }, {
-        scale: 1,
-        opacity: 1,
-        rotation: 0,
-        duration: 1,
-        stagger: 0.1,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-            trigger: '.insurance-companies',
-            start: 'top 80%',
-        }
-    });
+    // Insurance companies animation removed per request
 
     // Location cards animation
     gsap.fromTo('.location-card', {
@@ -871,6 +856,10 @@ function initPackageCards() {
             });
         });
     });
+}
+
+function logoImgClick() {
+    location.href = '#home';
 }
 
 // ===== UTILITY FUNCTIONS =====
