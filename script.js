@@ -60,14 +60,13 @@ function initializeApp() {
     initNavigation();
     initGSAPAnimations();
     initScrollAnimations();
-    initContactForm();
+    //initContactForm();
     initMap();
-    initVideoControls();
+    //initVideoControls();
     initServiceCards();
     initPackageCards();
     initMobileDrawer();
     initMobileDrawerSecondary();
-    initLogoNavigation();
 }
 
 // ===== SMOOTH SCROLLING WITH LENIS =====
@@ -91,7 +90,7 @@ function initSmoothScroll() {
     requestAnimationFrame(raf);
 
     // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]', '#logo-img').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const header = document.getElementById('main-header');
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -167,18 +166,6 @@ function initNavigation() {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Header subtle background on scroll (desktop only)
-    window.addEventListener('scroll', () => {
-        if (window.innerWidth > 768) {
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = 'none';
-            }
-        } else {
-            header.style.boxShadow = 'none';
-        }
-    });
 
     // Legacy mobile menu kept for desktop fallback only
     if (hamburger && navMenu) {
@@ -593,63 +580,63 @@ function initScrollAnimations() {
 }
 
 // ===== CONTACT FORM =====
-function initContactForm() {
-    const form = document.getElementById('contact-form');
-    const submitBtn = document.querySelector('.btn-submit');
+// function initContactForm() {
+//     const form = document.getElementById('contact-form');
+//     const submitBtn = document.querySelector('.btn-submit');
 
-    if (!form) return;
+//     if (!form) return;
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+//     form.addEventListener('submit', async (e) => {
+//         e.preventDefault();
 
-        // Add loading state
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Изпращане...';
-        submitBtn.disabled = true;
+//         // Add loading state
+//         const originalText = submitBtn.innerHTML;
+//         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Изпращане...';
+//         submitBtn.disabled = true;
 
-        // Get form data
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
+//         // Get form data
+//         const formData = new FormData(form);
+//         const data = Object.fromEntries(formData);
 
-        try {
-            // Simulate form submission (replace with actual endpoint)
-            await new Promise(resolve => setTimeout(resolve, 2000));
+//         try {
+//             // Simulate form submission (replace with actual endpoint)
+//             await new Promise(resolve => setTimeout(resolve, 2000));
 
-            // Success message
-            showNotification('Съобщението е изпратено успешно!', 'success');
-            form.reset();
+//             // Success message
+//             showNotification('Съобщението е изпратено успешно!', 'success');
+//             form.reset();
 
-            // Reset form labels
-            const labels = form.querySelectorAll('label');
-            labels.forEach(label => {
-                label.style.top = '50%';
-                label.style.fontSize = 'var(--font-size-base)';
-                label.style.color = 'var(--color-gray)';
-            });
+//             // Reset form labels
+//             const labels = form.querySelectorAll('label');
+//             labels.forEach(label => {
+//                 label.style.top = '50%';
+//                 label.style.fontSize = 'var(--font-size-base)';
+//                 label.style.color = 'var(--color-gray)';
+//             });
 
-        } catch (error) {
-            showNotification('Грешка при изпращане на съобщението. Моля опитайте отново.', 'error');
-        } finally {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }
-    });
+//         } catch (error) {
+//             showNotification('Грешка при изпращане на съобщението. Моля опитайте отново.', 'error');
+//         } finally {
+//             submitBtn.innerHTML = originalText;
+//             submitBtn.disabled = false;
+//         }
+//     });
 
-    // Form field animations
-    const formInputs = form.querySelectorAll('input, select, textarea');
+//     // Form field animations
+//     const formInputs = form.querySelectorAll('input, select, textarea');
 
-    formInputs.forEach(input => {
-        input.addEventListener('focus', () => {
-            input.parentElement.classList.add('focused');
-        });
+//     formInputs.forEach(input => {
+//         input.addEventListener('focus', () => {
+//             input.parentElement.classList.add('focused');
+//         });
 
-        input.addEventListener('blur', () => {
-            if (!input.value) {
-                input.parentElement.classList.remove('focused');
-            }
-        });
-    });
-}
+//         input.addEventListener('blur', () => {
+//             if (!input.value) {
+//                 input.parentElement.classList.remove('focused');
+//             }
+//         });
+//     });
+// }
 
 // ===== NOTIFICATION SYSTEM =====
 function showNotification(message, type = 'info') {
@@ -739,36 +726,36 @@ function initMap() {
 }
 
 // ===== VIDEO CONTROLS =====
-function initVideoControls() {
-    const video = document.querySelector('.hero-video');
-    if (!video) return;
+// function initVideoControls() {
+//     const video = document.querySelector('.hero-video');
+//     if (!video) return;
 
-    // Video quality and performance optimization
-    video.addEventListener('loadeddata', () => {
-        video.play().catch(e => {
-            console.log('Video autoplay prevented:', e);
-        });
-    });
+//     // Video quality and performance optimization
+//     video.addEventListener('loadeddata', () => {
+//         video.play().catch(e => {
+//             console.log('Video autoplay prevented:', e);
+//         });
+//     });
 
-    // Pause video when not in viewport (performance)
-    const videoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                video.play().catch(e => console.log('Video play error:', e));
-            } else {
-                video.pause();
-            }
-        });
-    }, { threshold: 0.1 });
+//     // Pause video when not in viewport (performance)
+//     const videoObserver = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 video.play().catch(e => console.log('Video play error:', e));
+//             } else {
+//                 video.pause();
+//             }
+//         });
+//     }, { threshold: 0.1 });
 
-    videoObserver.observe(video);
+//     videoObserver.observe(video);
 
-    // Add video controls on mobile
-    if (window.innerWidth <= 768) {
-        video.controls = false;
-        video.muted = true;
-    }
-}
+//     // Add video controls on mobile
+//     if (window.innerWidth <= 768) {
+//         video.controls = false;
+//         video.muted = true;
+//     }
+// }
 
 // ===== SERVICE CARDS INTERACTION =====
 function initServiceCards() {
