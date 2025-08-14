@@ -1248,7 +1248,6 @@ a:hover {
 }
 
 .social-link:hover {
-  background: var(--color-primary);
   transform: translateY(-3px);
 }
 
