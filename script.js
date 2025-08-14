@@ -4,14 +4,18 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeApp();
 
     const header = document.getElementById('main-header');
+    const mainLogo = document.getElementById('logo-img')
     const headerHeight = header.offsetHeight;
 
     // Desktop curved header state
     function onScrollDesktop() {
         if (window.scrollY > headerHeight) {
             header.classList.add('scrolled');
+            mainLogo.classList.add('scrolled')
         } else {
             header.classList.remove('scrolled');
+            mainLogo.classList.remove('scrolled');
+
         }
     }
 
@@ -32,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function handleScroll() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 800) {
             header.classList.remove('scrolled'); // keep rectangular on mobile
             onScrollMobile();
         } else {
@@ -44,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', () => {
         // Reset states appropriately on resize
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 800) {
             header.classList.remove('scrolled');
         } else {
             header.classList.remove('hide');
@@ -67,8 +71,32 @@ function initializeApp() {
     initPackageCards();
     initMobileDrawer();
     initMobileDrawerSecondary();
+    initGallery();
 }
 
+function initGallery() {
+    const galleryElement = document.getElementById('lightgallery');
+    if (galleryElement) {
+        window.onload = function() {
+            lightGallery(galleryElement, {
+                plugins: [lgZoom, lgThumbnail],
+                licenseKey: 'YOUR_LICENSE_KEY', // Replace with your license key if you have one
+                speed: 500,
+                thumbnail: true,
+                animateThumb: true,
+                zoomFromOrigin: true,
+                allowMediaOverlap: true,
+                toggleThumb: true,
+                backdropDuration: 500,
+                mobileSettings: {
+                    controls: true,
+                    showCloseIcon: true,
+                    download: false,
+                }
+            });
+        };
+    }
+}
 // ===== SMOOTH SCROLLING WITH LENIS =====
 let lenis;
 
@@ -98,7 +126,7 @@ function initSmoothScroll() {
             if (target) {
                 const headerHeight = header ? header.offsetHeight : 0;
                 lenis.scrollTo(target, {
-                    offset: -headerHeight,
+                    offset: -(headerHeight + 10),
                     duration: 1.5
                 });
                 isAnchorScrolling = true;
