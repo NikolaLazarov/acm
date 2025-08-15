@@ -96,8 +96,8 @@ header{
 
 #main-header {
   border-radius: 7px 7px 0 0  !important;
-  margin: 10px !important;
-  width: calc(100% - 20px) !important;
+  margin: 10px 17.5% !important;
+  width: 65% !important;
   box-shadow: 0 0 2px 0 rgba(26, 27, 30, 0.18), 0 2px 4px 0 rgba(34, 36, 40, 0.16), 0 4px 6px 0 rgba(60, 63, 73, 0.14) !important;
   height: 4.5rem;
   position: fixed;
@@ -113,6 +113,26 @@ header{
   align-items: center;
 }
 
+@media (max-width: 1400px) {
+  #main-header {
+    margin: 10px 10% !important;
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 1140px) {
+  #main-header {
+    margin: 10px 5% !important;
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 1040px) {
+  #main-header {
+    margin: 10px 2.5% !important;
+    width: 95% !important;
+  }
+}
 
 .burger-icon{
   height: 24px;
@@ -427,6 +447,11 @@ a:hover {
   zoom: 200%;
   object-fit: contain;
   transition: 500ms;
+}
+
+.mobile-logo .logo-img{
+  width: 50px !important;
+  height: 50px !important;
 }
 
 .logo-img-footer{
