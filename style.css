@@ -216,7 +216,7 @@ a:hover {
 }
 
 .section-black, .section-red, .section-white{
-  padding: var(--spacing-4xl) 0 !important;
+  padding: var(--spacing-3xl) 0 !important;
 }
 
 .section-red h1, 
@@ -804,7 +804,34 @@ a:hover {
   text-align: justify;
   border-left: var(--color-primary) 3px solid;
   border-right: var(--color-primary) 3px solid;
-  padding: 0 25px;
+  padding: 15px 25px;
+}
+
+.about-us .section .section-header{
+    margin-bottom: var(--spacing-3xl);
+  }
+
+.top-for-us{
+  border-top: var(--color-primary) 3px solid;
+}
+
+.bottom-for-us{
+  border-bottom: var(--color-primary) 3px solid;
+}
+
+.top-for-us, .bottom-for-us{
+  border-radius: 3px;
+}
+
+@media(max-width: 800px){
+  .about-us-content p{
+    font-size: 1rem;
+    padding: 15px 20px;
+  }
+
+  .about-us-header{
+    margin-bottom: var(--spacing-2xl);
+  }
 }
 
 .feature-item h4 {
@@ -1653,13 +1680,11 @@ i + a {
   padding: var(--spacing-4xl) 0;
 }
 
-.about-us-content {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: var(--font-size-lg);
-  line-height: 1.8;
-  color: var(--color-gray-dark);
+@media (max-width: 800px) {
+  .about-us-content {
+    font-size: 1rem;
+    padding: 0 15px; /* Adjust padding for mobile */
+  }
 }
 
 @media (max-width: 800px) {
