@@ -804,7 +804,7 @@ a:hover {
   text-align: justify;
   border-left: var(--color-primary) 3px solid;
   border-right: var(--color-primary) 3px solid;
-  padding: 15px 25px;
+  padding: 15px 25px 8px;
 }
 
 .about-us .section .section-header{
@@ -826,7 +826,7 @@ a:hover {
 @media(max-width: 800px){
   .about-us-content p{
     font-size: 1rem;
-    padding: 15px 20px;
+    padding: 15px 20px 5px;
   }
 
   .about-us-header{
