@@ -1418,6 +1418,9 @@ i + a {
   .price-section-visual img {
     height: 400px;
   }
+  .complex-card{
+    padding: 1.75rem;
+  }
 }
 
 @media (max-width: 480px) {
