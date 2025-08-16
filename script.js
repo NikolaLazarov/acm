@@ -71,32 +71,57 @@ function initializeApp() {
     initPackageCards();
     initMobileDrawer();
     initMobileDrawerSecondary();
-    initGallery();
+    initPhotoSwipeGallery();
 }
 
-function initGallery() {
-    const galleryElement = document.getElementById('lightgallery');
-    if (galleryElement) {
-        window.onload = function() {
-            lightGallery(galleryElement, {
-                plugins: [lgZoom, lgThumbnail],
-                licenseKey: 'YOUR_LICENSE_KEY', // Replace with your license key if you have one
-                speed: 500,
-                thumbnail: true,
-                animateThumb: true,
-                zoomFromOrigin: true,
-                allowMediaOverlap: true,
-                toggleThumb: true,
-                backdropDuration: 500,
-                mobileSettings: {
-                    controls: true,
-                    showCloseIcon: true,
-                    download: false,
-                }
-            });
-        };
-    }
-}
+// function initPhotoSwipeGallery() {
+//     const galleryElement = document.getElementById('pswp-gallery');
+//     if (!galleryElement) return;
+
+//     const items = [];
+//     const galleryItems = galleryElement.querySelectorAll('a');
+
+//     galleryItems.forEach((link, index) => {
+//         const src = link.getAttribute('href');
+//         const width = parseInt(link.getAttribute('data-pswp-width')) || 1200;
+//         const height = parseInt(link.getAttribute('data-pswp-height')) || 900;
+
+//         items.push({
+//             src: src,
+//             w: width,
+//             h: height
+//         });
+
+//         link.dataset.pswpIndex = index;
+//     });
+
+//     const openPhotoSwipe = (index) => {
+//         const pswpElement = document.querySelectorAll('.pswp')[0];
+//         const options = {
+//             index: parseInt(index),
+//             bgOpacity: 0.8,
+//             showHideOpacity: true,
+//             getThumbBoundsFn: (index) => {
+//                 const thumbnail = galleryItems[index];
+//                 const pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
+//                 const rect = thumbnail.getBoundingClientRect();
+
+//                 return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
+//             }
+//         };
+//         const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+//         gallery.init();
+//     };
+
+//     galleryElement.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         if (e.target.tagName === 'IMG' && e.target.closest('a')) {
+//             const link = e.target.closest('a');
+//             openPhotoSwipe(link.dataset.pswpIndex);
+//         }
+//     });
+// }
+
 // ===== SMOOTH SCROLLING WITH LENIS =====
 let lenis;
 
