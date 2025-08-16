@@ -5,6 +5,11 @@ const lightbox = new PhotoSwipeLightbox({
     gallery: '#main-gallery',
     children: 'a',
     pswpModule: PhotoSwipe,
-    bgClickAction: 'close',
+    bgClickAction: '',
 });
 lightbox.init();
+lightbox.on('bindEvents', () => {
+  lightbox.pswp.on('bgClick', () => {
+    lightbox.pswp.close();
+  });
+});
