@@ -1811,7 +1811,7 @@ i + a {
     }
   }
 
-   @media (max-width: 700px){
+   @media (max-width: 650px){
     .company-logo:nth-child(2) img,
     .company-logo:nth-child(4) img{
       scale: 1.5 !important;
