@@ -1024,6 +1024,12 @@ a:hover {
   padding: 7.5rem 0 !important;
 }
 
+@media (max-width: 800px){
+  .insurance{
+    padding: var(--shadow-xl) 0;
+  }
+}
+
 .insurance-content {
   align-items: center;
 }
@@ -1780,6 +1786,36 @@ i + a {
 @media (max-width: 600px) {
   .services-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .insurance-companies {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .company-logo {
+    aspect-ratio: 1;
+    padding: var(--spacing-md);
+  }
+
+  .company-logo img {
+    max-width: 80%;
+    max-height: 80%;
+  }
+
+  @media (max-width: 800px){
+    .company-logo img{
+      scale: 1.3 !important;
+    }
+  }
+
+   @media (max-width: 700px){
+    .company-logo:nth-child(2) img,
+    .company-logo:nth-child(4) img{
+      scale: 1.5 !important;
+    }
   }
 }
 
