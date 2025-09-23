@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto Miami - Българска Верига Автосервизи</title>
     <meta name="description" content="AutoComplex Miami - доверен автосервиз в Маями за всички нужди на вашия автомобил. Гуми, боядисване, тапицерия, керамично покритие и пълен детайлинг.">
+    <meta name="keywords" content="автосервиз, авто сервиз, София, гуми, бояджийски услуги, тенекеджийски услуги, детайлинг, автотапицерия, ГТП, застраховки, Auto Miami, AutoComplex Miami">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://autocomplex-miami.example/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Auto Miami - Българска Верига Автосервизи">
+    <meta property="og:description" content="Доверен автосервиз за всички нужди: сервиз, гуми, боя, детайлинг, интериор и повече.">
+    <meta property="og:url" content="https://autocomplex-miami.example/">
+    <meta property="og:image" content="https://autocomplex-miami.example/src/img/complex-2.jpg">
+    <meta property="og:locale" content="bg_BG">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Auto Miami - Българска Верига Автосервизи">
+    <meta name="twitter:description" content="Доверен автосервиз за всички нужди: сервиз, гуми, боя, детайлинг, интериор и повече.">
+    <meta name="twitter:image" content="https://autocomplex-miami.example/src/img/complex-2.jpg">
+    <meta name="theme-color" content="#fa2a00">
     
 
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -57,6 +75,7 @@
                             <img class="logo-img" id="logo-img-header" onclick="logoImgClick()" src="src/logo-black-text.png" alt="Auto Miami" class="logo-img">
                         </div>
                     </div>
+                    <button class="lang-toggle-btn lang-toggle-mobile">EN</button>
                 </div>
                 <ul class="nav-menu" id="nav-menu">
                     <li class="nav-item">
@@ -85,9 +104,7 @@
                     </li>
                     <li class="nav-item">
                         <div class="language-toggle">
-                            <button class="lang-btn" onclick="setLanguage('bg')" data-translate="lang-bg">БГ</button>
-                            <span class="lang-separator">|</span>
-                            <button class="lang-btn" onclick="setLanguage('en')" data-translate="lang-en">EN</button>
+                            <button class="lang-toggle-btn">EN</button>
                         </div>
                     </li>
                 </ul>
@@ -138,11 +155,7 @@
                     <img src="src/chevron-right.svg" class="chevron-right"/>
                 </div>
             </a>
-            <div class="mobile-language-toggle">
-                <button class="lang-btn" onclick="setLanguage('bg')" data-translate="lang-bg">БГ</button>
-                <span class="lang-separator">|</span>
-                <button class="lang-btn" onclick="setLanguage('en')" data-translate="lang-en">EN</button>
-            </div>
+            
         </ul>
     </div>
 
@@ -203,7 +216,7 @@
                 <p class="hero-subtitle" data-translate="hero-subtitle">
                     Автокомплекси с почти всички услуги: сервиз, гуми, тенекеджийски и бояджийски работи, детайлинг, интериор и още
                 </p>
-                <div class="hero-features">
+                <!-- <div class="hero-features">
                     <div class="hero-feature">
                         <i class="fas fa-check-circle"></i>
                         <span data-translate="hero-feature-1">Доверен сервиз</span>
@@ -216,8 +229,8 @@
                         <i class="fas fa-tools"></i>
                         <span data-translate="hero-feature-3">Пълен спектър услуги</span>
                     </div>
-                </div>
-            </div> -->
+                </div> -->
+            </div>
             
             <div class="hero-cta">
                 <a href="#services" class="btn btn-hero-primary">

@@ -1,7 +1,7 @@
 /* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
   /* Colors */
-  --color-primary: #e31e2e;       /* Modern vibrant red */
+  --color-primary: #fa2a00;       /* Modern vibrant red */
   --color-primary-dark: 	 #9f141f;  /* Darker red */
   --color-primary-light: #fecaca; /* Light red */
   --color-black: #0f0f0f;         /* Rich black */
@@ -75,6 +75,15 @@
 html {
   font-size: 16px;
   scroll-behavior: auto;
+}
+
+/* Slightly larger text on mobile */
+@media (max-width: 768px) {
+  html { font-size: 17px; }
+  .hero-content {
+    background: rgba(255, 255, 255, 0.12);
+    padding: var(--spacing-xl);
+  }
 }
 
 body {  font-size: var(--font-size-base);
@@ -399,6 +408,44 @@ a:hover {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+/* Language toggle button */
+.lang-toggle-btn {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  box-shadow: 0 6px 12px rgba(227, 30, 46, 0.3);
+}
+.lang-toggle-mobile {
+  margin-right: 8px;
+}
+
+@media (max-width: 800px) {
+  .language-toggle { display: none; }
+  #hamburger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #hamburger .logo-container { flex: 1; display: flex; justify-content: center; }
+}
+
+
+.lang-toggle-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(227, 30, 46, 0.35);
+}
+
+.lang-toggle-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(227, 30, 46, 0.25);
+}
+
 /* ===== HEADER ===== */
 
 .nav{
@@ -517,7 +564,8 @@ a:hover {
 /* ===== HERO SECTION ===== */
 .hero {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 4.5rem); /* offset header height */
+  padding-top: 4.5rem; /* keep visual centering below fixed header */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -556,9 +604,27 @@ a:hover {
 
 .hero-content {
   text-align: center;
-  max-width: 800px;
-  padding: 0 var(--spacing-lg);
+  max-width: 880px;
+  padding: var(--spacing-lg) var(--spacing-xl);
   z-index: 1;
+  background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.55));
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Ensure hero content is centered within the visible viewport below the fixed header */
+@media (min-width: 801px) {
+  .hero-content {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    height: calc(100vh - 4rem);
+    padding-top: 4rem;
+  }
 }
 
 .complexes-title{
@@ -566,7 +632,7 @@ a:hover {
 }
 
 .hero-title {
-  font-size: var(--font-size-6xl);
+  font-size: clamp(2.5rem, 4vw + 1rem, 4rem);
   font-weight: 600;
   margin-bottom: var(--spacing-xl);
   line-height: 1.1;
@@ -602,7 +668,7 @@ a:hover {
 }
 
 .hero-subtitle {
-  font-size: var(--font-size-xl);
+  font-size: clamp(1.1rem, 1.2vw + 0.6rem, 1.5rem);
   margin-bottom: var(--spacing-2xl);
   color: rgba(255, 255, 255, 0.9);
   opacity: 0;

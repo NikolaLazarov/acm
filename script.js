@@ -274,6 +274,16 @@ const translations = {
 
 let currentLanguage = 'bg';
 
+// Backward compatibility shim for older inline handlers
+function changeLanguage(lang) {
+    if (lang === 'bg' || lang === 'en') {
+        setLanguage(lang);
+    } else {
+        const next = currentLanguage === 'bg' ? 'en' : 'bg';
+        setLanguage(next);
+    }
+}
+
 function setLanguage(lang) {
     currentLanguage = lang;
     localStorage.setItem('preferredLanguage', lang);
@@ -289,14 +299,11 @@ function updatePageContent() {
             element.textContent = translations[currentLanguage][key];
         }
     });
-    
-    // Update language button active states
-    const langButtons = document.querySelectorAll('.lang-btn');
-    langButtons.forEach(button => {
-        button.classList.remove('active');
-        if (button.onclick && button.onclick.toString().includes(`'${currentLanguage}'`)) {
-            button.classList.add('active');
-        }
+
+    // Update single toggle button label: EN means click to show English (current bg), BG means click to show Bulgarian (current en)
+    const toggleButtons = document.querySelectorAll('.lang-toggle-btn');
+    toggleButtons.forEach(btn => {
+        btn.textContent = currentLanguage === 'bg' ? 'EN' : 'BG';
     });
     
     // Update page title and meta description
@@ -318,6 +325,15 @@ function initLanguageSystem() {
     
     // Set initial language
     setLanguage(currentLanguage);
+
+    // Wire up single toggle button(s)
+    const toggleButtons = document.querySelectorAll('.lang-toggle-btn');
+    toggleButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const next = currentLanguage === 'bg' ? 'en' : 'bg';
+            setLanguage(next);
+        });
+    });
 }
 
 // ===== INITIALIZATION =====
