@@ -1819,3 +1819,71 @@ i + a {
   }
 }
 
+/* ===== LANGUAGE TOGGLE ===== */
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-left: var(--spacing-lg);
+}
+
+.mobile-language-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: var(--color-gray-dark);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  transition: var(--transition-base);
+  min-width: 32px;
+}
+
+.lang-btn:hover {
+  color: var(--color-primary);
+  background: rgba(227, 30, 46, 0.1);
+}
+
+.lang-btn.active {
+  color: var(--color-primary);
+  background: rgba(227, 30, 46, 0.15);
+}
+
+.lang-separator {
+  color: var(--color-gray);
+  font-weight: 300;
+  user-select: none;
+}
+
+/* Mobile language toggle styles */
+.mobile-language-toggle .lang-btn {
+  font-size: var(--font-size-base);
+  padding: var(--spacing-sm) var(--spacing-md);
+  min-width: 40px;
+}
+
+.mobile-language-toggle .lang-btn:hover {
+  background: rgba(227, 30, 46, 0.1);
+}
+
+.mobile-language-toggle .lang-btn.active {
+  background: rgba(227, 30, 46, 0.2);
+}
+
+@media (max-width: 800px) {
+  .language-toggle {
+    display: none;
+  }
+}
+
