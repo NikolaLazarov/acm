@@ -60,13 +60,13 @@
                 </div>
                 <ul class="nav-menu" id="nav-menu">
                     <li class="nav-item">
-                        <a href="#home" class="nav-link">Начало</a>
+                        <a href="#home" class="nav-link" data-translate="nav-home">Начало</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#services" class="nav-link">Услуги</a>
+                        <a href="#services" class="nav-link" data-translate="nav-services">Услуги</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#forus" class="nav-link">За нас</a>
+                        <a href="#forus" class="nav-link" data-translate="nav-about">За нас</a>
                     </li>
                     <li class="nav-logo">
                         <img class="logo-img" id="logo-img" src="src/logo-black-text.png" alt="Auto Miami" class="logo-img">
@@ -75,13 +75,20 @@
                         <a href="#about" class="nav-link">За нас</a>
                     </li> -->
                     <li class="nav-item">
-                        <a href="#gallery" class="nav-link">Галерия</a>
+                        <a href="#gallery" class="nav-link" data-translate="nav-gallery">Галерия</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#pricing" class="nav-link">Цени</a>
+                        <a href="#pricing" class="nav-link" data-translate="nav-pricing">Цени</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#complexes" class="nav-link">Нашите обекти</a>
+                        <a href="#complexes" class="nav-link" data-translate="nav-complexes">Нашите обекти</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="language-toggle">
+                            <button class="lang-btn" onclick="setLanguage('bg')" data-translate="lang-bg">БГ</button>
+                            <span class="lang-separator">|</span>
+                            <button class="lang-btn" onclick="setLanguage('en')" data-translate="lang-en">EN</button>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -98,7 +105,7 @@
     <div id="mobile-drawer" class="mobile-drawer animate__animated animate__fadeInLeft animate__fast" aria-hidden="true">
         <ul class="mobile-menu first-mobile-menu">
             <a class="mobile-link animate__animated animate__fadeInLeft" href="#home" >
-                Начало
+                <span data-translate="nav-home">Начало</span>
                 <div class = "border-bottom-anchor"></div>
             </a>
             <!-- <a class="mobile-link animate__animated animate__fadeInLeft" href="#about">
@@ -106,33 +113,35 @@
                 <div class = "border-bottom-anchor"></div>
             </a> -->
             <a class="mobile-link animate__animated animate__fadeInLeft" href="#services">
-                Услуги
+                <span data-translate="nav-services">Услуги</span>
                 <div class = "border-bottom-anchor"></div>
             </a>
             <a class="mobile-link animate__animated animate__fadeInLeft" href="#forus">
-                За нас
+                <span data-translate="nav-about">За нас</span>
                 <div class = "border-bottom-anchor"></div>
             </a>
             <a class="mobile-link animate__animated animate__fadeInLeft" href="#gallery">
-                Галерия
+                <span data-translate="nav-gallery">Галерия</span>
                 <div class = "border-bottom-anchor"></div>
             </a>
             <a class="mobile-link animate__animated animate__fadeInLeft" href="#pricing">
-                Цени
+                <span data-translate="nav-pricing">Цени</span>
                 <div class = "border-bottom-anchor"></div>
             </a>
             <a id="drawer-options" class="mobile-link animate__animated animate__fadeInLeft">
                 <div class="complexes-container">
                     <div>
-                        <p class="main-anchor">Сервизи</p>
+                        <p class="main-anchor" data-translate="nav-complexes">Нашите обекти</p>
                         <div class = "border-bottom-anchor"></div>
-                        <p class="secondary-anchor">Разгледайте нашите локации и услугите,<br> които предлагат</p>
+                        <p class="secondary-anchor" data-translate="complex-explore">Разгледайте нашите локации и услугите,<br> които предлагат</p>
                     </div>
                     <img src="src/chevron-right.svg" class="chevron-right"/>
                 </div>
             </a>
-            <div class="mobile-language-switcher">
-                <button id="mobile-language-switcher" class="language-switcher mobile" onclick="changeLanguage(currentLanguage === 'bg' ? 'en' : 'bg')" aria-label="Switch language" title="Switch between Bulgarian and English">EN</button>
+            <div class="mobile-language-toggle">
+                <button class="lang-btn" onclick="setLanguage('bg')" data-translate="lang-bg">БГ</button>
+                <span class="lang-separator">|</span>
+                <button class="lang-btn" onclick="setLanguage('en')" data-translate="lang-en">EN</button>
             </div>
         </ul>
     </div>
@@ -141,36 +150,36 @@
         <ul class="mobile-menu">
             <a class="mobile-link-options mobile-link animate__animated animate__fadeInLeft animate__delay-1900ms" href="#complexes">
                 <div>
-                   <p class="main-anchor">Всички сервизи</p>
+                   <p class="main-anchor" data-translate="complex-all">Всички обекти</p>
                    <div class = "border-bottom-anchor"></div>
                </div>
            </a> 
             <a class="mobile-link-options mobile-link animate__animated animate__fadeInLeft animate__delay-1500ms" href="#miami1">
                 <div>
-                    <p class="main-anchor">Маями 1</p>
+                    <p class="main-anchor" data-translate="complex-1-name">Маями 1</p>
                     <div class = "border-bottom-anchor"></div>
-                    <p class="secondary-anchor">бул. „Цариградско шосе“ 120, гр. София</p>
+                    <p class="secondary-anchor" data-translate="complex-1-address">бул. „Цариградско шосе" 120, гр. София</p>
                 </div>
             </a>
             <a class="mobile-link-options mobile-link animate__animated animate__fadeInLeft animate__delay-1600ms" href="#miami2">
                  <div>
-                    <p class="main-anchor">Маями 2</p>
+                    <p class="main-anchor" data-translate="complex-2-name">Маями 2</p>
                     <div class = "border-bottom-anchor"></div>
-                    <p class="secondary-anchor">кв. Кръстова вада, ул. „Манфред Вьорнер“ 9, гр. София</p>
+                    <p class="secondary-anchor" data-translate="complex-2-address">кв. Кръстова вада, ул. „Манфред Вьорнер" 9, гр. София</p>
                 </div>
             </a>
             <a class="mobile-link-options mobile-link animate__animated animate__fadeInLeft animate__delay-1700ms" href="#miami3">
                  <div>
-                    <p class="main-anchor">Маями 3</p>
+                    <p class="main-anchor" data-translate="complex-3-name">Маями 3</p>
                     <div class = "border-bottom-anchor"></div>
-                    <p class="secondary-anchor">Карпузица, бул. „Цар Борис III“ 270, гр. София</p>
+                    <p class="secondary-anchor" data-translate="complex-3-address">Карпузица, бул. „Цар Борис III" 270, гр. София</p>
                 </div>
             </a>
             <a class="mobile-link-options mobile-link animate__animated animate__fadeInLeft animate__delay-1800ms" href="#miami33">
                  <div>
-                    <p class="main-anchor">Маями 4</p>
+                    <p class="main-anchor" data-translate="complex-4-name">Маями 4</p>
                     <div class = "border-bottom-anchor"></div>
-                    <p class="secondary-anchor">бул. „Рожен“ 115, гр. София</p>
+                    <p class="secondary-anchor" data-translate="complex-4-address">бул. „Рожен" 115, гр. София</p>
                 </div>
             </a>              
         </ul>
@@ -186,33 +195,33 @@
             <div class="hero-text">
                 <div>
                     <h1 class="hero-title">
-                        <span class="hero-title-line">ВСИЧКО ЗА</span>
-                        <span class="hero-title-line hero-title-accent">ВАШИЯ АВТОМОБИЛ</span>
-                    <span class="hero-title-line">НА ЕДНО МЯСТО</span>
+                        <span class="hero-title-line" data-translate="hero-title-1">ВСИЧКО ЗА</span>
+                        <span class="hero-title-line hero-title-accent" data-translate="hero-title-2">ВАШИЯ АВТОМОБИЛ</span>
+                    <span class="hero-title-line" data-translate="hero-title-3">НА ЕДНО МЯСТО</span>
                 </h1>
                 </div>
-                <!-- <p class="hero-subtitle">
+                <p class="hero-subtitle" data-translate="hero-subtitle">
                     Автокомплекси с почти всички услуги: сервиз, гуми, тенекеджийски и бояджийски работи, детайлинг, интериор и още
                 </p>
                 <div class="hero-features">
                     <div class="hero-feature">
                         <i class="fas fa-check-circle"></i>
-                        <span>Доверен сервиз</span>
+                        <span data-translate="hero-feature-1">Доверен сервиз</span>
                     </div>
                     <div class="hero-feature">
                         <i class="fas fa-shield-alt"></i>
-                        <span>Работим с водещи застрахователни компании</span>
+                        <span data-translate="hero-feature-2">Работим с водещи застрахователни компании</span>
                     </div>
                     <div class="hero-feature">
                         <i class="fas fa-tools"></i>
-                        <span>Пълен спектър услуги</span>
+                        <span data-translate="hero-feature-3">Пълен спектър услуги</span>
                     </div>
                 </div>
             </div> -->
             
             <div class="hero-cta">
                 <a href="#services" class="btn btn-hero-primary">
-                    <span>Разгледай услугите</span>
+                    <span data-translate="hero-cta">Разгледай услугите</span>
                     <i class="fas fa-arrow-down"></i>
                 </a>
             </div>
@@ -223,8 +232,8 @@
     <section class="services section-red" id="services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Нашите услуги</h2>
-                <p class="section-subtitle">Всичко което ви трябва за вашия автомобил</p>
+                <h2 class="section-title" data-translate="services-title">Нашите услуги</h2>
+                <p class="section-subtitle" data-translate="services-subtitle">Всичко което ви трябва за вашия автомобил</p>
             </div>
             
             <div class="services-grid">
@@ -232,12 +241,12 @@
                     <div class="service-icon">
                         <i class="fas fa-screwdriver-wrench"></i>
                     </div>
-                    <h3 class="service-title">Сервиз</h3>
-                    <p class="service-description">Пълно сервизно обслужване и ремонт на всички системи</p>
+                    <h3 class="service-title" data-translate="service-service">Сервиз</h3>
+                    <p class="service-description" data-translate="service-service-desc">Пълно сервизно обслужване и ремонт на всички системи</p>
                     <ul class="service-features">
-                        <li>Диагностика и електрика</li>
-                        <li>Двигател, трансмисия, ходова част</li>
-                        <li>Спирачки и консумативи</li>
+                        <li data-translate="service-service-feature-1">Диагностика и електрика</li>
+                        <li data-translate="service-service-feature-2">Двигател, трансмисия, ходова част</li>
+                        <li data-translate="service-service-feature-3">Спирачки и консумативи</li>
                     </ul>
                 </div>
 
@@ -245,12 +254,12 @@
                     <div class="service-icon">
                         <i class="fas fa-car"></i>
                     </div>
-                    <h3 class="service-title">Авторепаратура</h3>
-                    <p class="service-description">Професионални тенекеджийски услуги и възстановяване след катастрофи</p>
+                    <h3 class="service-title" data-translate="service-bodywork">Авторепаратура</h3>
+                    <p class="service-description" data-translate="service-bodywork-desc">Професионални тенекеджийски услуги и възстановяване след катастрофи</p>
                     <ul class="service-features">
-                        <li>Изправяне на помачквания</li>
-                        <li>Заваряване</li>
-                        <li>Смяна на части</li>
+                        <li data-translate="service-bodywork-feature-1">Изправяне на помачквания</li>
+                        <li data-translate="service-bodywork-feature-2">Заваряване</li>
+                        <li data-translate="service-bodywork-feature-3">Смяна на части</li>
                     </ul>
                 </div>
 
@@ -258,12 +267,12 @@
                     <div class="service-icon">
                         <i class="fas fa-building"></i>
                     </div>
-                    <h3 class="service-title">ГТП</h3>
-                    <p class="service-description">Подготовка и преминаване на годишен технически преглед</p>
+                    <h3 class="service-title" data-translate="service-gtp">ГТП</h3>
+                    <p class="service-description" data-translate="service-gtp-desc">Подготовка и преминаване на годишен технически преглед</p>
                     <ul class="service-features">
-                        <li>Пълна предварителна проверка</li>
-                        <li>Консултация и съдействие на място</li>
-                        <li>Бързо обслужване</li>
+                        <li data-translate="service-gtp-feature-1">Пълна предварителна проверка</li>
+                        <li data-translate="service-gtp-feature-2">Консултация и съдействие на място</li>
+                        <li data-translate="service-gtp-feature-3">Бързо обслужване</li>
                     </ul>
                 </div>
 
@@ -271,12 +280,12 @@
                     <div class="service-icon">
                         <i class="fas fa-couch"></i>
                     </div>
-                    <h3 class="service-title">Автотапицерия</h3>
-                    <p class="service-description">Интериорни ремонти, претапициране на седалки, волан и панели</p>
+                    <h3 class="service-title" data-translate="service-upholstery">Автотапицерия</h3>
+                    <p class="service-description" data-translate="service-upholstery-desc">Интериорни ремонти, претапициране на седалки, волан и панели</p>
                     <ul class="service-features">
-                        <li>Претапициране седалки и волан</li>
-                        <li>Персонализирани материали</li>
-                        <li>Възстановяване интериор</li>
+                        <li data-translate="service-upholstery-feature-1">Претапициране седалки и волан</li>
+                        <li data-translate="service-upholstery-feature-2">Персонализирани материали</li>
+                        <li data-translate="service-upholstery-feature-3">Възстановяване интериор</li>
                     </ul>
                 </div>
 
@@ -284,12 +293,12 @@
                     <div class="service-icon">
                         <i class="fas fa-tools"></i>
                     </div>
-                    <h3 class="service-title">PDR</h3>
-                    <p class="service-description">Ремонт на вдлъбнатини без боядисване</p>
+                    <h3 class="service-title" data-translate="service-pdr">PDR</h3>
+                    <p class="service-description" data-translate="service-pdr-desc">Ремонт на вдлъбнатини без боядисване</p>
                     <ul class="service-features">
-                        <li>Премахване на дребни вдлъбнатини</li>
-                        <li>Без нарушаване на оригиналната боя</li>
-                        <li>Бързо и ефективно</li>
+                        <li data-translate="service-pdr-feature-1">Премахване на дребни вдлъбнатини</li>
+                        <li data-translate="service-pdr-feature-2">Без нарушаване на оригиналната боя</li>
+                        <li data-translate="service-pdr-feature-3">Бързо и ефективно</li>
                     </ul>
                 </div>
 
@@ -297,12 +306,12 @@
                     <div class="service-icon">
                         <i class="fas fa-car-alt"></i>
                     </div>
-                    <h3 class="service-title">Лепене на спукани стъкла</h3>
-                    <p class="service-description">Професионално възстановяване на спукани и отчупени автостъкла</p>
+                    <h3 class="service-title" data-translate="service-glass">Лепене на спукани стъкла</h3>
+                    <p class="service-description" data-translate="service-glass-desc">Професионално възстановяване на спукани и отчупени автостъкла</p>
                     <ul class="service-features">
-                        <li>Бърз и надежден ремонт</li>
-                        <li>Предотвратяване на разпространение на пукнатини</li>
-                        <li>Възстановяване на видимостта</li>
+                        <li data-translate="service-glass-feature-1">Бърз и надежден ремонт</li>
+                        <li data-translate="service-glass-feature-2">Предотвратяване на разпространение на пукнатини</li>
+                        <li data-translate="service-glass-feature-3">Възстановяване на видимостта</li>
                     </ul>
                 </div>
 
@@ -310,12 +319,12 @@
                     <div class="service-icon">
                         <i class="fas fa-car-side"></i>
                     </div>
-                    <h3 class="service-title">Продажба на автомобили</h3>
-                    <p class="service-description">Съдействие при покупко-продажба на употребявани автомобили</p>
+                    <h3 class="service-title" data-translate="service-sales">Продажба на автомобили</h3>
+                    <p class="service-description" data-translate="service-sales-desc">Съдействие при покупко-продажба на употребявани автомобили</p>
                     <ul class="service-features">
-                        <li>Оценка и консултация</li>
-                        <li>Подготовка за продажба</li>
-                        <li>Документално съдействие</li>
+                        <li data-translate="service-sales-feature-1">Оценка и консултация</li>
+                        <li data-translate="service-sales-feature-2">Подготовка за продажба</li>
+                        <li data-translate="service-sales-feature-3">Документално съдействие</li>
                     </ul>
                 </div>
 
@@ -323,12 +332,12 @@
                     <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="service-title">Застраховки</h3>
-                    <p class="service-description">Сключване на всички видове застрахователни полици</p>
+                    <h3 class="service-title" data-translate="service-insurance">Застраховки</h3>
+                    <p class="service-description" data-translate="service-insurance-desc">Сключване на всички видове застрахователни полици</p>
                     <ul class="service-features">
-                        <li>Гражданска отговорност</li>
-                        <li>Каско</li>
-                        <li>Имуществени и др.</li>
+                        <li data-translate="service-insurance-feature-1">Гражданска отговорност</li>
+                        <li data-translate="service-insurance-feature-2">Каско</li>
+                        <li data-translate="service-insurance-feature-3">Имуществени и др.</li>
                     </ul>
                 </div>
             </div>
@@ -337,11 +346,11 @@
     <section class="about-us section-white" id="forus">
         <div class="container">
             <div class="section-header about-us-header">
-                <h2 class="section-title">За нас</h2>
+                <h2 class="section-title" data-translate="about-title">За нас</h2>
             </div>
             <div class="about-us-content">
-                <p class="top-for-us">Автокомплекси Маями ООД е една от фирмите пионери в областта на пълната автоподдръжка и техническата поддръжка на автопаркове.</p>
-                <p class="bottom-for-us">Имаме удоволствието да предоставяме всички видове услуги, свързани с консултиране на клиента и реално извършване на техническа поддръжка, както и всички допълнителни услуги, от които Вашето превозно средство би могло да се нуждае: <strong>ГТП, автоСПА, Монтьорски авторемонти, Диагностика и всички видове ел. дейности, Пътна Помощ, Сервиз и продажба Гуми, поддръжка на екстериор и интериор на автомобила, тунинг, осигуряване и смяна на консумативи, сключване на застрахователни полици, документално и фактическо ликвидиране на щети и пълен автоасистанс, цялостен Тенекеджийски и Бояджийски ремонт на най-високо ниво.</strong></p>
+                <p class="top-for-us" data-translate="about-text-1">Автокомплекси Маями ООД е една от фирмите пионери в областта на пълната автоподдръжка и техническата поддръжка на автопаркове.</p>
+                <p class="bottom-for-us" data-translate="about-text-2">Имаме удоволствието да предоставяме всички видове услуги, свързани с консултиране на клиента и реално извършване на техническа поддръжка, както и всички допълнителни услуги, от които Вашето превозно средство би могло да се нуждае: <strong>ГТП, автоСПА, Монтьорски авторемонти, Диагностика и всички видове ел. дейности, Пътна Помощ, Сервиз и продажба Гуми, поддръжка на екстериор и интериор на автомобила, тунинг, осигуряване и смяна на консумативи, сключване на застрахователни полици, документално и фактическо ликвидиране на щети и пълен автоасистанс, цялостен Тенекеджийски и Бояджийски ремонт на най-високо ниво.</strong></p>
             </div>
         </div>
     </section>
@@ -349,8 +358,8 @@
         <div class="container">
             <div class="insurance-content">
                 <div class="insurance-text">
-                    <h2 class="section-title">Доверен сервиз</h2>
-                    <p>Сервизите на Auto Miami работят с Allianz, Auto Insurance и ЛевИнс</p>
+                    <h2 class="section-title" data-translate="insurance-title">Доверен сервиз</h2>
+                    <p data-translate="insurance-text">Сервизите на Auto Miami работят с Allianz, Auto Insurance и ЛевИнс</p>
                     <div class="insurance-companies">
                         <div class="company-logo"><img src="src/ins-Allianz.svg" alt="Allianz"></div>
                         <div class="company-logo"><img style="scale: 1.5" src="src/ins-assIns.png" alt="Asset Insurance"></div>
@@ -370,8 +379,8 @@
     <section class="gallery section-red" id='gallery'>
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Нашата Галерия</h2>
-                <p class="section-subtitle">Разгледайте снимки от нашите автокомплекси и работата ни</p>
+                <h2 class="section-title" data-translate="gallery-title">Нашата Галерия</h2>
+                <p class="section-subtitle" data-translate="gallery-subtitle">Разгледайте снимки от нашите автокомплекси и работата ни</p>
             </div>
             <div class="gallery-grid" id="main-gallery">
                 <a href="src/img/inside.jpg" data-pswp-width="2500" data-pswp-height="1667">
@@ -401,17 +410,17 @@
         <section class="section-white pricing" id="pricing">
             <div class="container">
                 <div class="section-header pricing-header">
-                    <h2 class="section-title">Цени</h2>
+                    <h2 class="section-title" data-translate="pricing-title">Цени</h2>
                 </div>
                 <div class="section-content-split">
                     <div class="section-text pricing-text-content">
-                        <p class="section-subtitle pricing-text black">Поради голямото разнообразие от услуги и специфики на
+                        <p class="section-subtitle pricing-text black" data-translate="pricing-text">Поради голямото разнообразие от услуги и специфики на
                             автомобилите, крайната цена се определя след оглед. Нашите специалисти ще ви препоръчат
                             най-доброто решение и ще изготвят прозрачна оферта.</p>
-                        <p class="section-subtitle pricing-subtitle black">Каним ви в най-близкия автосериз за
+                        <p class="section-subtitle pricing-subtitle black" data-translate="pricing-subtitle">Каним ви в най-близкия автокомплекс за
                             консултация и индивидуална оферта</p>
                         <a href="#complexes" class="btn btn-hero-primary btn-pricing">
-                            <span>Сервизи</span>
+                            <span data-translate="pricing-cta">Нашите обекти</span>
                             <i class="fas fa-location-dot"></i>
                         </a>
                     </div>
@@ -429,23 +438,23 @@
         
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title complexes-title">НАШИТЕ ОБЕКТИ</h2>
-                <p class="section-subtitle">Четири локации с пълен набор от услуги</p>
+                <h2 class="section-title complexes-title" data-translate="complexes-title">НАШИТЕ ОБЕКТИ</h2>
+                <p class="section-subtitle" data-translate="complexes-subtitle">Четири локации с пълен набор от услуги</p>
             </div>
 
             <article class="complex-card" id="miami1">
                 <div class="complex-info">
-                    <h3>Авто Маями 1</h3>
-                    <p class="complex-address">бул. „Цариградско шосе“ 120, гр. София</p>
+                    <h3 data-translate="complex-1-name">Маями 1</h3>
+                    <p class="complex-address" data-translate="complex-1-address">бул. „Цариградско шосе" 120, гр. София</p>
                     <div class="complex-contacts">
-                        <p><i class="fas fa-phone"></i> +359 88 578 0888</p>
-                        <p><i class="fas fa-clock"></i> Пон–Пет: 9:00–18:00, Съб/Нед: Почивни</p>
+                        <p><i class="fas fa-phone"></i> +359 888 111 111</p>
+                        <p><i class="fas fa-clock"></i> <span data-translate="complex-hours">Пон–Пет: 8:00–18:00, Съб: 8:00–16:00</span></p>
                     </div>
                     <ul class="complex-services">
-                        <li>Гуми и джанти</li>
-                        <li>Тенекеджийски и бояджийски услуги</li>
-                        <li>Детайлинг и интериор</li>
-                        <li>Диагностика и обслужване</li>
+                        <li data-translate="complex-1-service-1">Гуми и джанти</li>
+                        <li data-translate="complex-1-service-2">Тенекеджийски и бояджийски услуги</li>
+                        <li data-translate="complex-1-service-3">Детайлинг и интериор</li>
+                        <li data-translate="complex-1-service-4">Диагностика и обслужване</li>
                     </ul>
                 </div>
                 <div class="complex-visual-wrapper">
@@ -459,17 +468,17 @@
             </article>
             <article class="complex-card" id="miami2">
                 <div class="complex-info">
-                    <h3>Авто Маями 2</h3>
-                    <p class="complex-address">кв. Кръстова вада, ул. „Манфред Вьорнер“ 9, гр. София</p>
+                    <h3 data-translate="complex-2-name">Маями 2</h3>
+                    <p class="complex-address" data-translate="complex-2-address">кв. Кръстова вада, ул. „Манфред Вьорнер" 9, гр. София</p>
                     <div class="complex-contacts">
-                        <p><i class="fas fa-phone"></i> +359 88 578 5888</p>
-                        <p><i class="fas fa-clock"></i> Пон–Пет: 8:30–17:30, Съб/Нед: Почивни</p>
+                        <p><i class="fas fa-phone"></i> +359 888 222 222</p>
+                        <p><i class="fas fa-clock"></i> <span data-translate="complex-hours">Пон–Пет: 8:00–18:00, Съб: 8:00–16:00</span></p>
                     </div>
                     <ul class="complex-services">
-                        <li>Пълно сервизно обслужване</li>
-                        <li>Калибриране и геометрия</li>
-                        <li>Бояджийски услуги</li>
-                        <li>Детайлинг</li>
+                        <li data-translate="complex-2-service-1">Пълно сервизно обслужване</li>
+                        <li data-translate="complex-2-service-2">Калибриране и геометрия</li>
+                        <li data-translate="complex-2-service-3">Бояджийски услуги</li>
+                        <li data-translate="complex-2-service-4">Детайлинг</li>
                     </ul>
                 </div>
                 <div class="complex-visual-wrapper">
@@ -484,17 +493,17 @@
 
             <article class="complex-card" id="miami3">
                 <div class="complex-info">
-                    <h3>Авто Маями 3</h3>
-                    <p class="complex-address">Карпузица, бул. „Цар Борис III“ 270, гр. София</p>
+                    <h3 data-translate="complex-3-name">Маями 3</h3>
+                    <p class="complex-address" data-translate="complex-3-address">Карпузица, бул. „Цар Борис III" 270, гр. София</p>
                     <div class="complex-contacts">
-                        <p><i class="fas fa-phone"></i> +359 877 500 525</p>
-                        <p><i class="fas fa-clock"></i> Пон–Пет: 9:00–18:00, Съб/Нед: Почивни</p>
+                        <p><i class="fas fa-phone"></i> +359 888 333 333</p>
+                        <p><i class="fas fa-clock"></i> <span data-translate="complex-hours">Пон–Пет: 8:00–18:00, Съб: 8:00–16:00</span></p>
                     </div>
                     <ul class="complex-services">
-                        <li>Тенекеджийски и бояджийски услуги</li>
-                        <li>Сервиз и диагностика</li>
-                        <li>Интериорни ремонти</li>
-                        <li>Гуми и баланс</li>
+                        <li data-translate="complex-3-service-1">Тенекеджийски и бояджийски услуги</li>
+                        <li data-translate="complex-3-service-2">Сервиз и диагностика</li>
+                        <li data-translate="complex-3-service-3">Интериорни ремонти</li>
+                        <li data-translate="complex-3-service-4">Гуми и баланс</li>
                     </ul>
                 </div>
                 <div class="complex-visual-wrapper">
@@ -509,17 +518,17 @@
 
             <article class="complex-card" id="miami33">
                 <div class="complex-info">
-                    <h3>Авто Маями 4</h3>
+                    <h3 data-translate="complex-4-name">Маями 4</h3>
+                    <p class="complex-address" data-translate="complex-4-address">бул. „Рожен" 115, гр. София</p>
                     <div class="complex-contacts">
-                        <p class="complex-address"><i class="fas fa-location-dot"></i> бул. „Рожен“ 115, гр. София</p>
-                        <p><i class="fas fa-phone"></i> +359 88 336 3933</p>
-                        <p><i class="fas fa-clock"></i> Пон–Пет: 9:00–18:00, Съб/Нед: Почивни</p>
+                        <p><i class="fas fa-phone"></i> +359 888 444 444</p>
+                        <p><i class="fas fa-clock"></i> <span data-translate="complex-hours">Пон–Пет: 8:00–18:00, Съб: 8:00–16:00</span></p>
                     </div>
                     <ul class="complex-services">
-                        <li>Пълен спектър услуги</li>
-                        <li>Детайлинг и керамика</li>
-                        <li>Сервиз ходова част</li>
-                        <li>Гуми и съхранение</li>
+                        <li data-translate="complex-4-service-1">Пълен спектър услуги</li>
+                        <li data-translate="complex-4-service-2">Детайлинг и керамика</li>
+                        <li data-translate="complex-4-service-3">Сервиз ходова част</li>
+                        <li data-translate="complex-4-service-4">Гуми и съхранение</li>
                     </ul>
                 </div>
                 <div class="complex-visual-wrapper">
@@ -542,7 +551,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <img class="logo-img-footer" id="logo-img" src="src/logo-white-text.png" alt="Auto Miami" class="logo-img">
-                    <p>Вашият доверен партньор за всички автомобилни нужди в София.</p>
+                    <p data-translate="footer-description">Вашият доверен партньор за всички автомобилни нужди в София.</p>
                     <div class="social-links">
                         <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/AutoMiami33" class="social-link"><i class="fab fa-facebook"></i></a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/autocomplexmiami/" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -552,24 +561,24 @@
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Навигация</h4>
+                    <h4 data-translate="footer-navigation">Навигация</h4>
                     <div class="footer-section-nav">
                         <div>
                             <ul>
-                                <li><a href="#home">Начало</a></li>
-                                <li><a href="#services">Услуги</a></li>
-                                <li><a href="#forus">За нас</a></li>
-                                <li><a href="#pricing">Цени</a></li>
-                                <li><a href="#gallery">Галерия</a></li>
-                                <li><a href="#complexes">Сервизи</a></li>
+                                <li><a href="#home" data-translate="nav-home">Начало</a></li>
+                                <li><a href="#services" data-translate="nav-services">Услуги</a></li>
+                                <li><a href="#forus" data-translate="nav-about">За нас</a></li>
+                                <li><a href="#pricing" data-translate="nav-pricing">Цени</a></li>
+                                <li><a href="#gallery" data-translate="nav-gallery">Галерия</a></li>
+                                <li><a href="#complexes" data-translate="nav-complexes">Нашите обекти</a></li>
                             </ul>
                         </div>
                         <div>
                             <ul class="footer-complexes">
-                                <li><a href="#miami1">Маями 1</a></li>
-                                <li><a href="#miami2">Маями 2</a></li>
-                                <li><a href="#miami3">Маями 3</a></li>
-                                <li><a href="#miami33">Маями 4</a></li>
+                                <li><a href="#miami1" data-translate="complex-1-name">Маями 1</a></li>
+                                <li><a href="#miami2" data-translate="complex-2-name">Маями 2</a></li>
+                                <li><a href="#miami3" data-translate="complex-3-name">Маями 3</a></li>
+                                <li><a href="#miami33" data-translate="complex-4-name">Маями 4</a></li>
                             </ul>
                         </div>
                     </div>
@@ -586,7 +595,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 AutoComplex Miami. Всички права запазени.</p>
+                <p data-translate="footer-copyright">&copy; 2025 AutoComplex Miami. Всички права запазени.</p>
             </div>
         </div>
     </footer>

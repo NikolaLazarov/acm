@@ -1,3 +1,325 @@
+// ===== TRANSLATION SYSTEM =====
+const translations = {
+    bg: {
+        // Navigation
+        'nav-home': 'Начало',
+        'nav-services': 'Услуги',
+        'nav-about': 'За нас',
+        'nav-gallery': 'Галерия',
+        'nav-pricing': 'Цени',
+        'nav-complexes': 'Нашите обекти',
+        
+        // Hero Section
+        'hero-title-1': 'ВСИЧКО ЗА',
+        'hero-title-2': 'ВАШИЯ АВТОМОБИЛ',
+        'hero-title-3': 'НА ЕДНО МЯСТО',
+        'hero-subtitle': 'Автокомплекси с почти всички услуги: сервиз, гуми, тенекеджийски и бояджийски работи, детайлинг, интериор и още',
+        'hero-feature-1': 'Доверен сервиз',
+        'hero-feature-2': 'Работим с водещи застрахователни компании',
+        'hero-feature-3': 'Пълен спектър услуги',
+        'hero-cta': 'Разгледай услугите',
+        
+        // Services
+        'services-title': 'Нашите услуги',
+        'services-subtitle': 'Всичко което ви трябва за вашия автомобил',
+        'service-service': 'Сервиз',
+        'service-service-desc': 'Пълно сервизно обслужване и ремонт на всички системи',
+        'service-service-feature-1': 'Диагностика и електрика',
+        'service-service-feature-2': 'Двигател, трансмисия, ходова част',
+        'service-service-feature-3': 'Спирачки и консумативи',
+        
+        'service-bodywork': 'Авторепаратура',
+        'service-bodywork-desc': 'Професионални тенекеджийски услуги и възстановяване след катастрофи',
+        'service-bodywork-feature-1': 'Изправяне на помачквания',
+        'service-bodywork-feature-2': 'Заваряване',
+        'service-bodywork-feature-3': 'Смяна на части',
+        
+        'service-gtp': 'ГТП',
+        'service-gtp-desc': 'Подготовка и преминаване на годишен технически преглед',
+        'service-gtp-feature-1': 'Пълна предварителна проверка',
+        'service-gtp-feature-2': 'Консултация и съдействие на място',
+        'service-gtp-feature-3': 'Бързо обслужване',
+        
+        'service-upholstery': 'Автотапицерия',
+        'service-upholstery-desc': 'Интериорни ремонти, претапициране на седалки, волан и панели',
+        'service-upholstery-feature-1': 'Претапициране седалки и волан',
+        'service-upholstery-feature-2': 'Персонализирани материали',
+        'service-upholstery-feature-3': 'Възстановяване интериор',
+        
+        'service-pdr': 'PDR',
+        'service-pdr-desc': 'Ремонт на вдлъбнатини без боядисване',
+        'service-pdr-feature-1': 'Премахване на дребни вдлъбнатини',
+        'service-pdr-feature-2': 'Без нарушаване на оригиналната боя',
+        'service-pdr-feature-3': 'Бързо и ефективно',
+        
+        'service-glass': 'Лепене на спукани стъкла',
+        'service-glass-desc': 'Професионално възстановяване на спукани и отчупени автостъкла',
+        'service-glass-feature-1': 'Бърз и надежден ремонт',
+        'service-glass-feature-2': 'Предотвратяване на разпространение на пукнатини',
+        'service-glass-feature-3': 'Възстановяване на видимостта',
+        
+        'service-sales': 'Продажба на автомобили',
+        'service-sales-desc': 'Съдействие при покупко-продажба на употребявани автомобили',
+        'service-sales-feature-1': 'Оценка и консултация',
+        'service-sales-feature-2': 'Подготовка за продажба',
+        'service-sales-feature-3': 'Документално съдействие',
+        
+        'service-insurance': 'Застраховки',
+        'service-insurance-desc': 'Сключване на всички видове застрахователни полици',
+        'service-insurance-feature-1': 'Гражданска отговорност',
+        'service-insurance-feature-2': 'Каско',
+        'service-insurance-feature-3': 'Имуществени и др.',
+        
+        // About Us
+        'about-title': 'За нас',
+        'about-text-1': 'Автокомплекси Маями ООД е една от фирмите пионери в областта на пълната автоподдръжка и техническата поддръжка на автопаркове.',
+        'about-text-2': 'Имаме удоволствието да предоставяме всички видове услуги, свързани с консултиране на клиента и реално извършване на техническа поддръжка, както и всички допълнителни услуги, от които Вашето превозно средство би могло да се нуждае: ГТП, автоСПА, Монтьорски авторемонти, Диагностика и всички видове ел. дейности, Пътна Помощ, Сервиз и продажба Гуми, поддръжка на екстериор и интериор на автомобила, тунинг, осигуряване и смяна на консумативи, сключване на застрахователни полици, документално и фактическо ликвидиране на щети и пълен автоасистанс, цялостен Тенекеджийски и Бояджийски ремонт на най-високо ниво.',
+        
+        // Insurance
+        'insurance-title': 'Доверен сервиз',
+        'insurance-text': 'Сервизите на Auto Miami работят с Allianz, Auto Insurance и ЛевИнс',
+        
+        // Gallery
+        'gallery-title': 'Нашата Галерия',
+        'gallery-subtitle': 'Разгледайте снимки от нашите автокомплекси и работата ни',
+        
+        // Pricing
+        'pricing-title': 'Цени',
+        'pricing-text': 'Поради голямото разнообразие от услуги и специфики на автомобилите, крайната цена се определя след оглед. Нашите специалисти ще ви препоръчат най-доброто решение и ще изготвят прозрачна оферта.',
+        'pricing-subtitle': 'Каним ви в най-близкия автокомплекс за консултация и индивидуална оферта',
+        'pricing-cta': 'Нашите обекти',
+        
+        // Complexes
+        'complexes-title': 'НАШИТЕ ОБЕКТИ',
+        'complexes-subtitle': 'Четири локации с пълен набор от услуги',
+        'complex-all': 'Всички обекти',
+        'complex-explore': 'Разгледайте нашите локации и услугите, които предлагат',
+        
+        // Complex details
+        'complex-1-name': 'Маями 1',
+        'complex-1-address': 'бул. „Цариградско шосе" 120, гр. София',
+        'complex-1-service-1': 'Гуми и джанти',
+        'complex-1-service-2': 'Тенекеджийски и бояджийски услуги',
+        'complex-1-service-3': 'Детайлинг и интериор',
+        'complex-1-service-4': 'Диагностика и обслужване',
+        
+        'complex-2-name': 'Маями 2',
+        'complex-2-address': 'кв. Кръстова вада, ул. „Манфред Вьорнер" 9, гр. София',
+        'complex-2-service-1': 'Пълно сервизно обслужване',
+        'complex-2-service-2': 'Калибриране и геометрия',
+        'complex-2-service-3': 'Бояджийски услуги',
+        'complex-2-service-4': 'Детайлинг',
+        
+        'complex-3-name': 'Маями 3',
+        'complex-3-address': 'Карпузица, бул. „Цар Борис III" 270, гр. София',
+        'complex-3-service-1': 'Тенекеджийски и бояджийски услуги',
+        'complex-3-service-2': 'Сервиз и диагностика',
+        'complex-3-service-3': 'Интериорни ремонти',
+        'complex-3-service-4': 'Гуми и баланс',
+        
+        'complex-4-name': 'Маями 4',
+        'complex-4-address': 'бул. „Рожен" 115, гр. София',
+        'complex-4-service-1': 'Пълен спектър услуги',
+        'complex-4-service-2': 'Детайлинг и керамика',
+        'complex-4-service-3': 'Сервиз ходова част',
+        'complex-4-service-4': 'Гуми и съхранение',
+        
+        'complex-hours': 'Пон–Пет: 8:00–18:00, Съб: 8:00–16:00',
+        
+        // Footer
+        'footer-description': 'Вашият доверен партньор за всички автомобилни нужди в София.',
+        'footer-navigation': 'Навигация',
+        'footer-copyright': '© 2025 AutoComplex Miami. Всички права запазени.',
+        
+        // Language toggle
+        'lang-bg': 'БГ',
+        'lang-en': 'EN'
+    },
+    en: {
+        // Navigation
+        'nav-home': 'Home',
+        'nav-services': 'Services',
+        'nav-about': 'About Us',
+        'nav-gallery': 'Gallery',
+        'nav-pricing': 'Pricing',
+        'nav-complexes': 'Our Locations',
+        
+        // Hero Section
+        'hero-title-1': 'EVERYTHING FOR',
+        'hero-title-2': 'YOUR VEHICLE',
+        'hero-title-3': 'IN ONE PLACE',
+        'hero-subtitle': 'Auto complexes with almost all services: service, tires, bodywork and painting, detailing, interior and more',
+        'hero-feature-1': 'Trusted service',
+        'hero-feature-2': 'We work with leading insurance companies',
+        'hero-feature-3': 'Full range of services',
+        'hero-cta': 'Explore services',
+        
+        // Services
+        'services-title': 'Our Services',
+        'services-subtitle': 'Everything you need for your vehicle',
+        'service-service': 'Service',
+        'service-service-desc': 'Complete service maintenance and repair of all systems',
+        'service-service-feature-1': 'Diagnostics and electrical',
+        'service-service-feature-2': 'Engine, transmission, chassis',
+        'service-service-feature-3': 'Brakes and consumables',
+        
+        'service-bodywork': 'Bodywork',
+        'service-bodywork-desc': 'Professional bodywork services and restoration after accidents',
+        'service-bodywork-feature-1': 'Dent repair',
+        'service-bodywork-feature-2': 'Welding',
+        'service-bodywork-feature-3': 'Parts replacement',
+        
+        'service-gtp': 'Annual Inspection',
+        'service-gtp-desc': 'Preparation and passing of annual technical inspection',
+        'service-gtp-feature-1': 'Complete preliminary check',
+        'service-gtp-feature-2': 'Consultation and on-site assistance',
+        'service-gtp-feature-3': 'Fast service',
+        
+        'service-upholstery': 'Auto Upholstery',
+        'service-upholstery-desc': 'Interior repairs, seat reupholstering, steering wheel and panels',
+        'service-upholstery-feature-1': 'Seat and steering wheel reupholstering',
+        'service-upholstery-feature-2': 'Custom materials',
+        'service-upholstery-feature-3': 'Interior restoration',
+        
+        'service-pdr': 'PDR',
+        'service-pdr-desc': 'Paintless dent repair',
+        'service-pdr-feature-1': 'Removal of small dents',
+        'service-pdr-feature-2': 'Without damaging original paint',
+        'service-pdr-feature-3': 'Fast and effective',
+        
+        'service-glass': 'Cracked Glass Repair',
+        'service-glass-desc': 'Professional restoration of cracked and chipped auto glass',
+        'service-glass-feature-1': 'Fast and reliable repair',
+        'service-glass-feature-2': 'Preventing crack propagation',
+        'service-glass-feature-3': 'Visibility restoration',
+        
+        'service-sales': 'Car Sales',
+        'service-sales-desc': 'Assistance with buying and selling used vehicles',
+        'service-sales-feature-1': 'Evaluation and consultation',
+        'service-sales-feature-2': 'Sale preparation',
+        'service-sales-feature-3': 'Documentation assistance',
+        
+        'service-insurance': 'Insurance',
+        'service-insurance-desc': 'All types of insurance policies',
+        'service-insurance-feature-1': 'Liability insurance',
+        'service-insurance-feature-2': 'Comprehensive insurance',
+        'service-insurance-feature-3': 'Property and others',
+        
+        // About Us
+        'about-title': 'About Us',
+        'about-text-1': 'AutoComplex Miami Ltd. is one of the pioneer companies in the field of complete auto maintenance and technical support of vehicle fleets.',
+        'about-text-2': 'We have the pleasure to provide all types of services related to customer consultation and actual technical maintenance, as well as all additional services that your vehicle might need: Annual Inspection, Auto SPA, Mechanical auto repairs, Diagnostics and all types of electrical activities, Roadside Assistance, Service and tire sales, exterior and interior vehicle maintenance, tuning, supply and replacement of consumables, insurance policy conclusion, documentation and actual damage settlement and full auto assistance, complete Bodywork and Painting repairs at the highest level.',
+        
+        // Insurance
+        'insurance-title': 'Trusted Service',
+        'insurance-text': 'Auto Miami services work with Allianz, Auto Insurance and LevIns',
+        
+        // Gallery
+        'gallery-title': 'Our Gallery',
+        'gallery-subtitle': 'Browse photos from our auto complexes and our work',
+        
+        // Pricing
+        'pricing-title': 'Pricing',
+        'pricing-text': 'Due to the great variety of services and vehicle specifics, the final price is determined after inspection. Our specialists will recommend the best solution and prepare a transparent offer.',
+        'pricing-subtitle': 'We invite you to the nearest auto complex for consultation and individual offer',
+        'pricing-cta': 'Our Locations',
+        
+        // Complexes
+        'complexes-title': 'OUR LOCATIONS',
+        'complexes-subtitle': 'Four locations with full range of services',
+        'complex-all': 'All Locations',
+        'complex-explore': 'Explore our locations and the services they offer',
+        
+        // Complex details
+        'complex-1-name': 'Miami 1',
+        'complex-1-address': 'Tsarigradsko Shose Blvd 120, Sofia',
+        'complex-1-service-1': 'Tires and wheels',
+        'complex-1-service-2': 'Bodywork and painting services',
+        'complex-1-service-3': 'Detailing and interior',
+        'complex-1-service-4': 'Diagnostics and maintenance',
+        
+        'complex-2-name': 'Miami 2',
+        'complex-2-address': 'Krustova Vada, Manfred Worner St 9, Sofia',
+        'complex-2-service-1': 'Complete service maintenance',
+        'complex-2-service-2': 'Alignment and geometry',
+        'complex-2-service-3': 'Painting services',
+        'complex-2-service-4': 'Detailing',
+        
+        'complex-3-name': 'Miami 3',
+        'complex-3-address': 'Karpuzitsa, Tsar Boris III Blvd 270, Sofia',
+        'complex-3-service-1': 'Bodywork and painting services',
+        'complex-3-service-2': 'Service and diagnostics',
+        'complex-3-service-3': 'Interior repairs',
+        'complex-3-service-4': 'Tires and balancing',
+        
+        'complex-4-name': 'Miami 4',
+        'complex-4-address': 'Rozhen Blvd 115, Sofia',
+        'complex-4-service-1': 'Full range of services',
+        'complex-4-service-2': 'Detailing and ceramic coating',
+        'complex-4-service-3': 'Chassis service',
+        'complex-4-service-4': 'Tires and storage',
+        
+        'complex-hours': 'Mon–Fri: 8:00–18:00, Sat: 8:00–16:00',
+        
+        // Footer
+        'footer-description': 'Your trusted partner for all automotive needs in Sofia.',
+        'footer-navigation': 'Navigation',
+        'footer-copyright': '© 2025 AutoComplex Miami. All rights reserved.',
+        
+        // Language toggle
+        'lang-bg': 'BG',
+        'lang-en': 'EN'
+    }
+};
+
+let currentLanguage = 'bg';
+
+function setLanguage(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('preferredLanguage', lang);
+    document.documentElement.lang = lang;
+    updatePageContent();
+}
+
+function updatePageContent() {
+    const elements = document.querySelectorAll('[data-translate]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[currentLanguage][key]) {
+            element.textContent = translations[currentLanguage][key];
+        }
+    });
+    
+    // Update language button active states
+    const langButtons = document.querySelectorAll('.lang-btn');
+    langButtons.forEach(button => {
+        button.classList.remove('active');
+        if (button.onclick && button.onclick.toString().includes(`'${currentLanguage}'`)) {
+            button.classList.add('active');
+        }
+    });
+    
+    // Update page title and meta description
+    if (currentLanguage === 'en') {
+        document.title = 'Auto Miami - Bulgarian Auto Service Chain';
+        document.querySelector('meta[name="description"]').content = 'AutoComplex Miami - trusted auto service in Miami for all your vehicle needs. Tires, painting, upholstery, ceramic coating and full detailing.';
+    } else {
+        document.title = 'Auto Miami - Българска Верига Автосервизи';
+        document.querySelector('meta[name="description"]').content = 'AutoComplex Miami - доверен автосервиз в Маями за всички нужди на вашия автомобил. Гуми, боядисване, тапицерия, керамично покритие и пълен детайлинг.';
+    }
+}
+
+function initLanguageSystem() {
+    // Check for saved language preference
+    const savedLanguage = localStorage.getItem('preferredLanguage');
+    if (savedLanguage && translations[savedLanguage]) {
+        currentLanguage = savedLanguage;
+    }
+    
+    // Set initial language
+    setLanguage(currentLanguage);
+}
+
 // ===== INITIALIZATION =====
 var isAnchorScrolling = false;
 document.addEventListener('DOMContentLoaded', function () {
@@ -60,6 +382,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function initializeApp() {
+    initLanguageSystem();
     initSmoothScroll();
     initNavigation();
     initGSAPAnimations();
