@@ -69,10 +69,12 @@
         <nav class="nav">
             <div class="nav-container">
                 <div class="hamburger" id="hamburger">
-                    <img class="burger-icon" src="src/menu-burger.svg"/>
+                    <img class="burger-icon" id="burger-icon" src="src/menu-burger.svg"/>
                     <div class="logo-container">
                         <div class="nav-logo mobile-logo">
-                            <img class="logo-img" id="logo-img-header" onclick="logoImgClick()" src="src/logo-black-text.png" alt="Auto Miami" class="logo-img">
+                            <a href="#home" aria-label="Auto Miami Home">
+                                <img class="logo-img" id="logo-img-header" onclick="logoImgClick()" src="src/logo-black-text.png" alt="Auto Miami" class="logo-img">
+                            </a>
                         </div>
                     </div>
                     <button class="lang-toggle-btn lang-toggle-mobile">EN</button>
@@ -155,7 +157,9 @@
                     <img src="src/chevron-right.svg" class="chevron-right"/>
                 </div>
             </a>
-            
+            <div class="mobile-drawer-footer">
+                <button class="lang-toggle-btn">EN</button>
+            </div>
         </ul>
     </div>
 
@@ -195,6 +199,9 @@
                     <p class="secondary-anchor" data-translate="complex-4-address">бул. „Рожен" 115, гр. София</p>
                 </div>
             </a>              
+            <div class="mobile-drawer-footer">
+                <button class="lang-toggle-btn">EN</button>
+            </div>
         </ul>
     </div>
 
@@ -451,23 +458,26 @@
         
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title complexes-title" data-translate="complexes-title">НАШИТЕ ОБЕКТИ</h2>
+                <h2 class="section-title complexes-title" data-translate="complexes-title">НАШИТЕ СЕРВИЗИ</h2>
                 <p class="section-subtitle" data-translate="complexes-subtitle">Четири локации с пълен набор от услуги</p>
             </div>
 
             <article class="complex-card" id="miami1">
                 <div class="complex-info">
-                    <h3 data-translate="complex-1-name">Маями 1</h3>
+                    <h3 data-translate="complex-1-name">Авто Маями 1</h3>
                     <p class="complex-address" data-translate="complex-1-address">бул. „Цариградско шосе" 120, гр. София</p>
                     <div class="complex-contacts">
-                        <p><i class="fas fa-phone"></i> +359 888 111 111</p>
-                        <p><i class="fas fa-clock"></i> <span data-translate="complex-hours">Пон–Пет: 8:00–18:00, Съб: 8:00–16:00</span></p>
+                        <p><i class="fas fa-phone"></i> +359 885 780 888</p>
+                        <p><i class="fas fa-clock"></i> <span data-translate="complex-1-hours">Пон–Пет: 9:00–18:00, Съб/Нед: Почивни</span></p>
                     </div>
                     <ul class="complex-services">
-                        <li data-translate="complex-1-service-1">Гуми и джанти</li>
-                        <li data-translate="complex-1-service-2">Тенекеджийски и бояджийски услуги</li>
-                        <li data-translate="complex-1-service-3">Детайлинг и интериор</li>
-                        <li data-translate="complex-1-service-4">Диагностика и обслужване</li>
+                        <li data-translate="complex-1-service-1">Автосервиз</li>
+                        <li data-translate="complex-1-service-2">Автокозметика</li>
+                        <li data-translate="complex-1-service-3">Авторепаратура</li>
+                        <li data-translate="complex-1-service-4">Гуми сервиз</li>
+                        <li data-translate="complex-1-service-5">ГТП</li>
+                        <li data-translate="complex-1-service-6">Аксесоари и тунинг части</li>
+                        <li data-translate="complex-1-service-7">Кафе и зона с Wi‑Fi</li>
                     </ul>
                 </div>
                 <div class="complex-visual-wrapper">
@@ -481,17 +491,16 @@
             </article>
             <article class="complex-card" id="miami2">
                 <div class="complex-info">
-                    <h3 data-translate="complex-2-name">Маями 2</h3>
+                    <h3 data-translate="complex-2-name">Авто Маями 2</h3>
                     <p class="complex-address" data-translate="complex-2-address">кв. Кръстова вада, ул. „Манфред Вьорнер" 9, гр. София</p>
                     <div class="complex-contacts">
-                        <p><i class="fas fa-phone"></i> +359 888 222 222</p>
-                        <p><i class="fas fa-clock"></i> <span data-translate="complex-hours">Пон–Пет: 8:00–18:00, Съб: 8:00–16:00</span></p>
+                        <p><i class="fas fa-phone"></i> +359 885 785 888</p>
+                        <p><i class="fas fa-clock"></i> <span data-translate="complex-2-hours">Пон–Пет: 8:30–17:30, Съб/Нед: Почивни</span></p>
                     </div>
                     <ul class="complex-services">
-                        <li data-translate="complex-2-service-1">Пълно сервизно обслужване</li>
-                        <li data-translate="complex-2-service-2">Калибриране и геометрия</li>
-                        <li data-translate="complex-2-service-3">Бояджийски услуги</li>
-                        <li data-translate="complex-2-service-4">Детайлинг</li>
+                        <li data-translate="complex-2-service-1">Автосервиз</li>
+                        <li data-translate="complex-2-service-2">Гуми сервиз</li>
+                        <li data-translate="complex-2-service-3">Аксесоари и тунинг части</li>
                     </ul>
                 </div>
                 <div class="complex-visual-wrapper">
@@ -506,17 +515,15 @@
 
             <article class="complex-card" id="miami3">
                 <div class="complex-info">
-                    <h3 data-translate="complex-3-name">Маями 3</h3>
+                    <h3 data-translate="complex-3-name">Авто Маями 3</h3>
                     <p class="complex-address" data-translate="complex-3-address">Карпузица, бул. „Цар Борис III" 270, гр. София</p>
                     <div class="complex-contacts">
-                        <p><i class="fas fa-phone"></i> +359 888 333 333</p>
-                        <p><i class="fas fa-clock"></i> <span data-translate="complex-hours">Пон–Пет: 8:00–18:00, Съб: 8:00–16:00</span></p>
+                        <p><i class="fas fa-phone"></i> +359 877 500 525</p>
+                        <p><i class="fas fa-clock"></i> <span data-translate="complex-3-hours">Пон–Пет: 9:00–18:00, Съб/Нед: Почивни</span></p>
                     </div>
                     <ul class="complex-services">
-                        <li data-translate="complex-3-service-1">Тенекеджийски и бояджийски услуги</li>
-                        <li data-translate="complex-3-service-2">Сервиз и диагностика</li>
-                        <li data-translate="complex-3-service-3">Интериорни ремонти</li>
-                        <li data-translate="complex-3-service-4">Гуми и баланс</li>
+                        <li data-translate="complex-3-service-1">Автосервиз</li>
+                        <li data-translate="complex-3-service-2">Авторепаратура</li>
                     </ul>
                 </div>
                 <div class="complex-visual-wrapper">
@@ -531,17 +538,26 @@
 
             <article class="complex-card" id="miami33">
                 <div class="complex-info">
-                    <h3 data-translate="complex-4-name">Маями 4</h3>
+                    <h3 data-translate="complex-4-name">Авто Маями 4</h3>
                     <p class="complex-address" data-translate="complex-4-address">бул. „Рожен" 115, гр. София</p>
                     <div class="complex-contacts">
-                        <p><i class="fas fa-phone"></i> +359 888 444 444</p>
-                        <p><i class="fas fa-clock"></i> <span data-translate="complex-hours">Пон–Пет: 8:00–18:00, Съб: 8:00–16:00</span></p>
+                        <p><i class="fas fa-phone"></i> +359 883 363 933</p>
+                        <p><i class="fas fa-clock"></i> <span data-translate="complex-4-hours">Пон–Пет: 9:00–18:00, Съб/Нед: Почивни</span></p>
                     </div>
                     <ul class="complex-services">
-                        <li data-translate="complex-4-service-1">Пълен спектър услуги</li>
-                        <li data-translate="complex-4-service-2">Детайлинг и керамика</li>
-                        <li data-translate="complex-4-service-3">Сервиз ходова част</li>
-                        <li data-translate="complex-4-service-4">Гуми и съхранение</li>
+                        <li data-translate="complex-4-service-1">Автосервиз</li>
+                        <li data-translate="complex-4-service-2">Автокозметика</li>
+                        <li data-translate="complex-4-service-3">Авторепаратура</li>
+                        <li data-translate="complex-4-service-4">Гуми сервиз</li>
+                        <li data-translate="complex-4-service-5">ГТП</li>
+                        <li data-translate="complex-4-service-6">Застраховки</li>
+                        <li data-translate="complex-4-service-7">Автотапицерия</li>
+                        <li data-translate="complex-4-service-8">PDR</li>
+                        <li data-translate="complex-4-service-9">Лепене на спукани стъкла</li>
+                        <li data-translate="complex-4-service-10">Тунинг & чип тунинг</li>
+                        <li data-translate="complex-4-service-11">Продажба на автомобили</li>
+                        <li data-translate="complex-4-service-12">Аксесоари и тунинг части</li>
+                        <li data-translate="complex-4-service-13">Кафе и зона с Wi‑Fi</li>
                     </ul>
                 </div>
                 <div class="complex-visual-wrapper">

@@ -7,7 +7,7 @@ const translations = {
         'nav-about': 'За нас',
         'nav-gallery': 'Галерия',
         'nav-pricing': 'Цени',
-        'nav-complexes': 'Нашите обекти',
+        'nav-complexes': 'Сервизи',
         
         // Hero Section
         'hero-title-1': 'ВСИЧКО ЗА',
@@ -72,8 +72,8 @@ const translations = {
         
         // About Us
         'about-title': 'За нас',
-        'about-text-1': 'Автокомплекси Маями ООД е една от фирмите пионери в областта на пълната автоподдръжка и техническата поддръжка на автопаркове.',
-        'about-text-2': 'Имаме удоволствието да предоставяме всички видове услуги, свързани с консултиране на клиента и реално извършване на техническа поддръжка, както и всички допълнителни услуги, от които Вашето превозно средство би могло да се нуждае: ГТП, автоСПА, Монтьорски авторемонти, Диагностика и всички видове ел. дейности, Пътна Помощ, Сервиз и продажба Гуми, поддръжка на екстериор и интериор на автомобила, тунинг, осигуряване и смяна на консумативи, сключване на застрахователни полици, документално и фактическо ликвидиране на щети и пълен автоасистанс, цялостен Тенекеджийски и Бояджийски ремонт на най-високо ниво.',
+        'about-text-1': 'Авто Маями е утвърдена верига от премиум автосервизи в София от 2008 г. Към днешна дата сервизите предлагат пълна гама услуги за автомобили, включващи сервизна дейност, техническа поддръжка, годишни технически прегледи, авто мивка, автокозметика, детейлинг, тунинг, застраховки и продажба на автомобили.',
+        'about-text-2': 'Със своите над 15 години опит, опитни механици и специалисти в своята дейност, верига Авто Маями се е превърнала в предпочитан партньор за частни клиенти, корпоративни автопаркове и автомобилни фенове.',
         
         // Insurance
         'insurance-title': 'Доверен сервиз',
@@ -90,41 +90,53 @@ const translations = {
         'pricing-cta': 'Нашите обекти',
         
         // Complexes
-        'complexes-title': 'НАШИТЕ ОБЕКТИ',
+        'complexes-title': 'НАШИТЕ СЕРВИЗИ',
         'complexes-subtitle': 'Четири локации с пълен набор от услуги',
         'complex-all': 'Всички обекти',
         'complex-explore': 'Разгледайте нашите локации и услугите, които предлагат',
         
         // Complex details
-        'complex-1-name': 'Маями 1',
+        'complex-1-name': 'Авто Маями 1',
         'complex-1-address': 'бул. „Цариградско шосе" 120, гр. София',
-        'complex-1-service-1': 'Гуми и джанти',
-        'complex-1-service-2': 'Тенекеджийски и бояджийски услуги',
-        'complex-1-service-3': 'Детайлинг и интериор',
-        'complex-1-service-4': 'Диагностика и обслужване',
+        'complex-1-service-1': 'Автосервиз',
+        'complex-1-service-2': 'Автокозметика',
+        'complex-1-service-3': 'Авторепаратура',
+        'complex-1-service-4': 'Гуми сервиз',
+        'complex-1-service-5': 'ГТП',
+        'complex-1-service-6': 'Аксесоари и тунинг части',
+        'complex-1-service-7': 'Кафе и зона с Wi‑Fi',
         
-        'complex-2-name': 'Маями 2',
+        'complex-2-name': 'Авто Маями 2',
         'complex-2-address': 'кв. Кръстова вада, ул. „Манфред Вьорнер" 9, гр. София',
-        'complex-2-service-1': 'Пълно сервизно обслужване',
-        'complex-2-service-2': 'Калибриране и геометрия',
-        'complex-2-service-3': 'Бояджийски услуги',
-        'complex-2-service-4': 'Детайлинг',
+        'complex-2-service-1': 'Автосервиз',
+        'complex-2-service-2': 'Гуми сервиз',
+        'complex-2-service-3': 'Аксесоари и тунинг части',
         
-        'complex-3-name': 'Маями 3',
+        'complex-3-name': 'Авто Маями 3',
         'complex-3-address': 'Карпузица, бул. „Цар Борис III" 270, гр. София',
-        'complex-3-service-1': 'Тенекеджийски и бояджийски услуги',
-        'complex-3-service-2': 'Сервиз и диагностика',
-        'complex-3-service-3': 'Интериорни ремонти',
-        'complex-3-service-4': 'Гуми и баланс',
+        'complex-3-service-1': 'Автосервиз',
+        'complex-3-service-2': 'Авторепаратура',
         
-        'complex-4-name': 'Маями 4',
+        'complex-4-name': 'Авто Маями 4',
         'complex-4-address': 'бул. „Рожен" 115, гр. София',
-        'complex-4-service-1': 'Пълен спектър услуги',
-        'complex-4-service-2': 'Детайлинг и керамика',
-        'complex-4-service-3': 'Сервиз ходова част',
-        'complex-4-service-4': 'Гуми и съхранение',
+        'complex-4-service-1': 'Автосервиз',
+        'complex-4-service-2': 'Автокозметика',
+        'complex-4-service-3': 'Авторепаратура',
+        'complex-4-service-4': 'Гуми сервиз',
+        'complex-4-service-5': 'ГТП',
+        'complex-4-service-6': 'Застраховки',
+        'complex-4-service-7': 'Автотапицерия',
+        'complex-4-service-8': 'PDR',
+        'complex-4-service-9': 'Лепене на спукани стъкла',
+        'complex-4-service-10': 'Тунинг & чип тунинг',
+        'complex-4-service-11': 'Продажба на автомобили',
+        'complex-4-service-12': 'Аксесоари и тунинг части',
+        'complex-4-service-13': 'Кафе и зона с Wi‑Fi',
         
-        'complex-hours': 'Пон–Пет: 8:00–18:00, Съб: 8:00–16:00',
+        'complex-1-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
+        'complex-2-hours': 'Пон–Пет: 8:30–17:30, Съб/Нед: Почивни',
+        'complex-3-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
+        'complex-4-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
         
         // Footer
         'footer-description': 'Вашият доверен партньор за всички автомобилни нужди в София.',
@@ -169,7 +181,7 @@ const translations = {
         'service-bodywork-feature-2': 'Welding',
         'service-bodywork-feature-3': 'Parts replacement',
         
-        'service-gtp': 'Annual Inspection',
+        'service-gtp': 'Annual Technical Inspection',
         'service-gtp-desc': 'Preparation and passing of annual technical inspection',
         'service-gtp-feature-1': 'Complete preliminary check',
         'service-gtp-feature-2': 'Consultation and on-site assistance',
@@ -207,8 +219,8 @@ const translations = {
         
         // About Us
         'about-title': 'About Us',
-        'about-text-1': 'AutoComplex Miami Ltd. is one of the pioneer companies in the field of complete auto maintenance and technical support of vehicle fleets.',
-        'about-text-2': 'We have the pleasure to provide all types of services related to customer consultation and actual technical maintenance, as well as all additional services that your vehicle might need: Annual Inspection, Auto SPA, Mechanical auto repairs, Diagnostics and all types of electrical activities, Roadside Assistance, Service and tire sales, exterior and interior vehicle maintenance, tuning, supply and replacement of consumables, insurance policy conclusion, documentation and actual damage settlement and full auto assistance, complete Bodywork and Painting repairs at the highest level.',
+        'about-text-1': 'Auto Miami is a premium car service chain in Sofia since 2008. Today, our centers offer a full range of automotive services including maintenance, technical support, annual technical inspections, car wash, auto detailing, tuning, insurance, and car sales.',
+        'about-text-2': 'With over 15 years of experience and skilled mechanics and specialists, Auto Miami has become a preferred partner for private clients, corporate fleets, and automotive enthusiasts.',
         
         // Insurance
         'insurance-title': 'Trusted Service',
@@ -231,35 +243,47 @@ const translations = {
         'complex-explore': 'Explore our locations and the services they offer',
         
         // Complex details
-        'complex-1-name': 'Miami 1',
+        'complex-1-name': 'Auto Miami 1',
         'complex-1-address': 'Tsarigradsko Shose Blvd 120, Sofia',
-        'complex-1-service-1': 'Tires and wheels',
-        'complex-1-service-2': 'Bodywork and painting services',
-        'complex-1-service-3': 'Detailing and interior',
-        'complex-1-service-4': 'Diagnostics and maintenance',
+        'complex-1-service-1': 'Auto Service',
+        'complex-1-service-2': 'Auto Detailing',
+        'complex-1-service-3': 'Body Repair',
+        'complex-1-service-4': 'Tire Service',
+        'complex-1-service-5': 'Annual Technical Inspection',
+        'complex-1-service-6': 'Accessories & Tuning Parts',
+        'complex-1-service-7': 'Coffee & Wi‑Fi Area',
         
-        'complex-2-name': 'Miami 2',
+        'complex-2-name': 'Auto Miami 2',
         'complex-2-address': 'Krustova Vada, Manfred Worner St 9, Sofia',
-        'complex-2-service-1': 'Complete service maintenance',
-        'complex-2-service-2': 'Alignment and geometry',
-        'complex-2-service-3': 'Painting services',
-        'complex-2-service-4': 'Detailing',
+        'complex-2-service-1': 'Auto Service',
+        'complex-2-service-2': 'Tire Service',
+        'complex-2-service-3': 'Accessories & Tuning Parts',
         
-        'complex-3-name': 'Miami 3',
+        'complex-3-name': 'Auto Miami 3',
         'complex-3-address': 'Karpuzitsa, Tsar Boris III Blvd 270, Sofia',
-        'complex-3-service-1': 'Bodywork and painting services',
-        'complex-3-service-2': 'Service and diagnostics',
-        'complex-3-service-3': 'Interior repairs',
-        'complex-3-service-4': 'Tires and balancing',
+        'complex-3-service-1': 'Auto Service',
+        'complex-3-service-2': 'Body Repair',
         
-        'complex-4-name': 'Miami 4',
+        'complex-4-name': 'Auto Miami 4',
         'complex-4-address': 'Rozhen Blvd 115, Sofia',
-        'complex-4-service-1': 'Full range of services',
-        'complex-4-service-2': 'Detailing and ceramic coating',
-        'complex-4-service-3': 'Chassis service',
-        'complex-4-service-4': 'Tires and storage',
+        'complex-4-service-1': 'Auto Service',
+        'complex-4-service-2': 'Auto Detailing',
+        'complex-4-service-3': 'Body Repair',
+        'complex-4-service-4': 'Tire Service',
+        'complex-4-service-5': 'Annual Technical Inspection',
+        'complex-4-service-6': 'Insurance',
+        'complex-4-service-7': 'Auto Upholstery',
+        'complex-4-service-8': 'PDR',
+        'complex-4-service-9': 'Cracked Glass Repair',
+        'complex-4-service-10': 'Tuning & Chip Tuning',
+        'complex-4-service-11': 'Car Sales',
+        'complex-4-service-12': 'Accessories & Tuning Parts',
+        'complex-4-service-13': 'Coffee & Wi‑Fi Area',
         
-        'complex-hours': 'Mon–Fri: 8:00–18:00, Sat: 8:00–16:00',
+        'complex-1-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
+        'complex-2-hours': 'Mon-Fri: 8:30–17:30, Sat/Sun: Closed',
+        'complex-3-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
+        'complex-4-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
         
         // Footer
         'footer-description': 'Your trusted partner for all automotive needs in Sofia.',
@@ -659,7 +683,7 @@ function closeDraweronX2() {
 
 // ===== MOBILE DRAWER =====
 function initMobileDrawer() {
-    const hamburger = document.getElementById('hamburger');
+    const hamburger = document.getElementById('burger-icon');
     const drawer = document.getElementById('mobile-drawer');
     const close = document.getElementById('drawer-close');
     const links = drawer ? drawer.querySelectorAll('.mobile-link') : [];
@@ -689,6 +713,7 @@ function initMobileDrawer() {
 
     // Close on background click
     drawer.addEventListener('click', (e) => {
+        // Only close when tapping outside the menu panel; do not toggle when header or other elements are clicked
         if (e.target === drawer) closeDrawer();
     });
 
