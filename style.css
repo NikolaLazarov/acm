@@ -832,7 +832,7 @@ a:hover {
 }
 
 .service-features li {
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
   margin-bottom: var(--spacing-sm);
   position: relative;
   padding-left: var(--spacing-lg);
