@@ -798,7 +798,8 @@ a:hover {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: var(--transition-base);
-  cursor: pointer;
+  cursor: default;
+  pointer-events: none;
 }
 
 .service-card:hover { background: rgba(255, 255, 255, 0.15); }
@@ -1228,10 +1229,9 @@ a:hover {
   object-fit: cover;
   border-radius: var(--border-radius-lg);
   transition: var(--transition-slow);
-}
-
-.complex-media:hover img {
-  transform: scale(1.05);
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 .complex-info h3 { color: var(--color-white); margin-bottom: var(--spacing-sm); }
@@ -1986,3 +1986,16 @@ i + a {
   }
 }
 
+.mobile-drawer-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  border-top: 1px solid rgb(227, 227, 227);
+}
+
+.lrgr{
+  scale: 1.1;
+}
