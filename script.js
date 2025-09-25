@@ -77,7 +77,7 @@ const translations = {
         
         // Insurance
         'insurance-title': 'Доверен сервиз',
-        'insurance-text': 'Сервизите на Auto Miami работят с Allianz, Auto Insurance и ЛевИнс',
+        'insurance-text': 'Сервизите на Auto Miami работят със следните застрахователи: ',
         
         // Gallery
         'gallery-title': 'Нашата Галерия',
@@ -154,7 +154,7 @@ const translations = {
         'nav-about': 'About Us',
         'nav-gallery': 'Gallery',
         'nav-pricing': 'Pricing',
-        'nav-complexes': 'Our Locations',
+        'nav-complexes': 'Locations',
         
         // Hero Section
         'hero-title-1': 'EVERYTHING FOR',
@@ -224,7 +224,7 @@ const translations = {
         
         // Insurance
         'insurance-title': 'Trusted Service',
-        'insurance-text': 'Auto Miami services work with Allianz, Auto Insurance and LevIns',
+        'insurance-text': 'Auto Miami Services work with the following insurance providers: ',
         
         // Gallery
         'gallery-title': 'Our Gallery',
