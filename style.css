@@ -315,7 +315,7 @@ a:hover {
 
 .section-red .section-title,
 .section-black .section-title {
-  background: linear-gradient(135deg, var(--color-white), var(--color-primary-light));
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
