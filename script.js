@@ -92,6 +92,7 @@ const translations = {
         // Gallery
         'gallery-title': 'Нашата Галерия',
         'gallery-subtitle': 'Разгледайте снимки от нашите автокомплекси и работата ни',
+        'gallery-sub-subtitle': 'Натисните някоя снимка за да я разгледате по-подробно',
         
         // Pricing
         'pricing-title': 'Цени',
@@ -147,6 +148,12 @@ const translations = {
         'complex-2-hours': 'Пон–Пет: 8:30–17:30, Съб/Нед: Почивни',
         'complex-3-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
         'complex-4-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
+        
+        // Documents Section    
+        'documents-title': 'Документи',
+        'documents-main-text': 'Автокомплекси Маями ООД сключи договор за предоставяне на безвъзмездна финансова помощ по процедура: BG16RFOP002-2.089 „Подкрепа за малки предприятия с оборот над 500 000 лв. за преодоляване на икономическите последствия от пандемията COVID-19".',
+        'documents-download-link': 'Свалете пълното съобщение от тук',
+        'documents-other-title': 'Други документи:',
         
         // Footer
         'footer-description': 'Вашият доверен партньор за всички автомобилни нужди в София.',
@@ -249,6 +256,7 @@ const translations = {
         // Gallery
         'gallery-title': 'Our Gallery',
         'gallery-subtitle': 'Browse photos from our auto complexes and our work',
+        'gallery-sub-subtitle': 'Click a photo to take a close look',
         
         // Pricing
         'pricing-title': 'Pricing',
@@ -303,7 +311,13 @@ const translations = {
         'complex-1-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
         'complex-2-hours': 'Mon-Fri: 8:30–17:30, Sat/Sun: Closed',
         'complex-3-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
-        'complex-4-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
+        'complex-4-hours': 'Mon–Fri: 9:00–18:00, Sat/Sun: Closed',
+        
+        // Documents Section
+        'documents-title': 'Documents',
+        'documents-main-text': 'AutoComplex Miami Ltd. signed a contract for providing non-refundable financial assistance under procedure: BG16RFOP002-2.089 "Support for small enterprises with turnover over 500,000 BGN to overcome the economic consequences of the COVID-19 pandemic".',
+        'documents-download-link': 'Download the full announcement here',
+        'documents-other-title': 'Other documents:',
         
         // Footer
         'footer-description': 'Your trusted partner for all automotive needs in Sofia.',
@@ -353,10 +367,10 @@ function updatePageContent() {
     // Update page title and meta description
     if (currentLanguage === 'en') {
         document.title = 'Auto Miami - Bulgarian Auto Service Chain';
-        document.querySelector('meta[name="description"]').content = 'AutoComplex Miami - trusted auto service in Miami for all your vehicle needs. Tires, painting, upholstery, ceramic coating and full detailing.';
+        document.querySelector('meta[name="description"]').content = 'Auto Miami - trusted auto service in Sofia for all your vehicle needs. Tires, painting, upholstery, ceramic coating and full detailing.';
     } else {
         document.title = 'Auto Miami - Българска Верига Автосервизи';
-        document.querySelector('meta[name="description"]').content = 'AutoComplex Miami - доверен автосервиз в Маями за всички нужди на вашия автомобил. Гуми, боядисване, тапицерия, керамично покритие и пълен детайлинг.';
+        document.querySelector('meta[name="description"]').content = 'Auto Miami - доверен автосервиз в София за всички нужди на вашия автомобил. Гуми, боядисване, тапицерия, керамично покритие и пълен детайлинг.';
     }
 }
 
