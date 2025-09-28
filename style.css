@@ -2064,6 +2064,7 @@ i + a {
   
   .documents-main-text {
     font-size: var(--font-size-lg);
+    padding-right: 0;
   }
   
   .documents-other-title {
