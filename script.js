@@ -13,30 +13,34 @@ const translations = {
         'hero-title-1': 'ВСИЧКО ЗА',
         'hero-title-2': 'ВАШИЯ АВТОМОБИЛ',
         'hero-title-3': 'НА ЕДНО МЯСТО',
-        'hero-subtitle': 'Автокомплекси с почти всички услуги: сервиз, гуми, тенекеджийски и бояджийски работи, детайлинг, интериор и още',
+        'hero-subtitle': 'Автокомплекси Маями предлага следните услуги: автосервиз, смяна на гуми, тенекеджийски и бояджийски услуги, автомивка и детайлинг, авто тапицерски услуги и други',
         'hero-feature-1': 'Доверен сервиз',
         'hero-feature-2': 'Работим с водещи застрахователни компании',
         'hero-feature-3': 'Пълен спектър услуги',
-        'hero-cta': 'Разгледай услугите',
+        'hero-cta': 'Разгледайте предлаганите услугите',
         
         // Services (updated)
+        'our-services': 'Предлагани услуги',
         'svc-auto-title': 'Автосервиз',
         'svc-auto-desc': 'за всички видове ремонти',
-        'svc-auto-f1': 'Диагностика и електрика',
-        'svc-auto-f2': 'Двигател, трансмисия, ходова част',
-        'svc-auto-f3': 'Спирачки и консумативи',
+        'svc-auto-f1': 'Компютърна диагностика',
+        'svc-auto-f2': 'Ремонт на двигател и ходова част',
+        'svc-auto-f3': 'Ремонт на спирачна система',
+        'svc-auto-f4': 'Техническо обслужване на автомобил',
+        'svc-auto-f5': 'Проверка и зареждане на климатици',
+        'svc-auto-f6': 'Смяна на гуми и хотел',
 
         'svc-body-title': 'Авторепаратура',
         'svc-body-desc': 'Авторемонтни работи и възстановяване на заводския вид на автомобили',
-        'svc-body-f1': 'Разпъване на смачкани шасита, заваряване, боядисване и др.',
-        'svc-body-f2': 'Ремонт и смяна на части',
-        'svc-body-f3': 'Доверен сервиз на водещите застрахователни компании',
+        'svc-body-f1': 'Ремонт и смяна на детайли',
+        'svc-body-f2': 'Тенекеджийски и бояджийски услуги',
+        'svc-body-f3': 'Доверен сервиз на застрахователни компании',
 
-        'svc-cosmo-title': 'Автокозметика',
+        'svc-cosmo-title': 'Автомивка и Автокозметика',
         'svc-cosmo-desc': 'Пълен автодетайлинг, външно и вътрешно измиване',
         'svc-cosmo-f1': 'Полиране и пастиране',
         'svc-cosmo-f2': 'Пране на салон',
-        'svc-cosmo-f3': 'Защита на лак, защитно фолио и керамика',
+        'svc-cosmo-f3': 'Нанасяне на защита с керамично покритие, полагане на защитно фолио и други',
 
         'svc-gtp-title': 'ГТП',
         'svc-gtp-desc': 'Годишен технически преглед с бързо обслужване',
@@ -46,14 +50,14 @@ const translations = {
 
         'svc-uph-title': 'Автотапицерия',
         'svc-uph-desc': 'Интериорни ремонти, претапициране на седалки, волан и панели',
-        'svc-uph-f1': 'Претапициране седалки и волан',
-        'svc-uph-f2': 'Персонализирани материали и проекти',
+        'svc-uph-f1': 'Претапициране на седалки, волан и таван',
+        'svc-uph-f2': 'Изпълнение на индивидуални проекти',
         'svc-uph-f3': 'Възстановяване на интериор',
 
         'svc-pdr-title': 'PDR',
         'svc-pdr-desc': 'Ремонт на вдлъбнатини без боядисване',
-        'svc-pdr-f1': 'Премахване на дребни вдлъбнатини',
-        'svc-pdr-f2': 'Без нарушаване на оригиналната боя',
+        'svc-pdr-f1': 'Премахване на вдлъбнатини от градушка',
+        'svc-pdr-f2': 'Без боядисване',
         'svc-pdr-f3': 'Бързо и ефективно',
 
         'svc-glass-title': 'Лепене на спукани стъкла',
@@ -64,15 +68,15 @@ const translations = {
 
         'svc-sales-title': 'Продажба на автомобили',
         'svc-sales-desc': 'Продажба на употребявани автомобили с гаранция',
-        'svc-sales-f1': 'Внос от Дубай, Канада, Щатите и Европа',
+        'svc-sales-f1': 'Внос от Европа, Канада, Щатите и Дубай',
         'svc-sales-f2': 'Гаранция за реален пробег и състояние',
         'svc-sales-f3': 'Съдействие за регистрация',
 
         'svc-ins-title': 'Застраховки',
-        'svc-ins-desc': 'Консултация и сключване на почти всички видове полици',
+        'svc-ins-desc': 'Консултации и сключване на всички видове автомобилни и други застраховки, включително:',
         'svc-ins-f1': 'Гражданска отговорност',
-        'svc-ins-f2': 'Каско',
-        'svc-ins-f3': 'Съдействие при щети',
+        'svc-ins-f2': 'Автокаско',
+        'svc-ins-f3': 'Асистанс',
 
         'svc-tyre-title': 'Гуми сервиз',
         'svc-tyre-desc': 'Оборудван с модерна техника и квалифицирани механици',
@@ -82,7 +86,7 @@ const translations = {
         
         // About Us
         'about-title': 'За нас',
-        'about-text-1': 'Авто Маями е утвърдена верига от премиум автосервизи в София от 2008 г. Към днешна дата сервизите предлагат пълна гама услуги за автомобили, включващи сервизна дейност, техническа поддръжка, годишни технически прегледи, авто мивка, автокозметика, детейлинг, тунинг, застраховки и продажба на автомобили.',
+        'about-text-1': 'Автокомплекси Маями е утвърдена верига от премиум автосервизи в София от 2008 г. Към днешна дата сервизите предлагат пълна гама услуги за автомобили, включващи сервизна дейност, техническа поддръжка, годишни технически прегледи, авто мивка, автокозметика, детейлинг, тунинг, застраховки и продажба на автомобили.',
         'about-text-2': 'Със своите над 15 години опит, опитни механици и специалисти в своята дейност, верига Авто Маями се е превърнала в предпочитан партньор за частни клиенти, корпоративни автопаркове и автомобилни фенове.',
         
         // Insurance
@@ -96,8 +100,8 @@ const translations = {
         
         // Pricing
         'pricing-title': 'Цени',
-        'pricing-text': 'Поради голямото разнообразие от услуги и специфики на автомобилите, крайната цена се определя след оглед. Нашите специалисти ще ви препоръчат най-доброто решение и ще изготвят прозрачна оферта.',
-        'pricing-subtitle': 'Каним ви в най-близкия автокомплекс за консултация и индивидуална оферта',
+        'pricing-text': 'Поради голямото разнообразие от услуги и специфики на автомобилите, крайната цена се определя след оглед и консултация. Нашите специалисти ще ви препоръчат най-доброто решение и ще изготвят индивидуална оферта.',
+        'pricing-subtitle': 'Каним Ви в най-близкия автосервиз за консултация и оферта',
         'pricing-cta': 'Нашите обекти',
         
         // Complexes
@@ -110,7 +114,7 @@ const translations = {
         'complex-1-name': 'Авто Маями 1',
         'complex-1-address': 'бул. „Цариградско шосе" 120, гр. София',
         'complex-1-service-1': 'Автосервиз',
-        'complex-1-service-2': 'Автокозметика',
+        'complex-1-service-2': 'Автомивка и Автокозметика',
         'complex-1-service-3': 'Авторепаратура',
         'complex-1-service-4': 'Гуми сервиз',
         'complex-1-service-5': 'ГТП',
@@ -131,7 +135,7 @@ const translations = {
         'complex-4-name': 'Авто Маями 4',
         'complex-4-address': 'бул. „Рожен" 115, гр. София',
         'complex-4-service-1': 'Автосервиз',
-        'complex-4-service-2': 'Автокозметика',
+        'complex-4-service-2': 'Автомивка и Автокозметика',
         'complex-4-service-3': 'Авторепаратура',
         'complex-4-service-4': 'Гуми сервиз',
         'complex-4-service-5': 'ГТП',
@@ -144,10 +148,20 @@ const translations = {
         'complex-4-service-12': 'Аксесоари и тунинг части',
         'complex-4-service-13': 'Кафе и зона с Wi‑Fi',
         
-        'complex-1-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
+        'service-working-hours': 'Работно време сервизи',
+        'carwash-working-hours': 'Работно време автомивка',
+        'gtp-working-hours': 'Работно време ГТП',
+        'gtp-phone-number': 'Телефон ГТП: ',
+        'complex-1-service-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
+        'complex-1-carwash-hours': 'Пон–Нед: 9:00–18:00',
+        'complex-1-gtp-hours': 'Пон–Нед: 9:00–18:00',
+        'complex-1-gtp-hours': 'Пон–Нед: 9:00–18:00',
         'complex-2-hours': 'Пон–Пет: 8:30–17:30, Съб/Нед: Почивни',
         'complex-3-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
-        'complex-4-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
+        'complex-4-service-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
+        'complex-4-carwash-hours': 'Пон–Нед: 9:00–18:00',
+        'complex-4-gtp-hours': 'Пон–Нед: 9:00–18:00',
+        'weekend-closed': 'Събота/Неделя: Почивни',
         
         // Documents Section    
         'documents-title': 'Документи',
@@ -177,30 +191,34 @@ const translations = {
         'hero-title-1': 'EVERYTHING FOR',
         'hero-title-2': 'YOUR VEHICLE',
         'hero-title-3': 'IN ONE PLACE',
-        'hero-subtitle': 'Auto complexes with almost all services: service, tires, bodywork and painting, detailing, interior and more',
+        'hero-subtitle': 'Auto Complexes Miami offers the following services: car repair, tire change, bodywork and painting services, car wash and detailing, auto upholstery services and more',
         'hero-feature-1': 'Trusted service',
         'hero-feature-2': 'We work with leading insurance companies',
         'hero-feature-3': 'Full range of services',
-        'hero-cta': 'Explore services',
+        'hero-cta': 'Explore our services',
         
         // Services (updated)
+        'our-services': 'Our services',
         'svc-auto-title': 'Auto Service',
         'svc-auto-desc': 'for all types of repairs',
-        'svc-auto-f1': 'Diagnostics and electrical',
-        'svc-auto-f2': 'Engine, transmission, suspension',
-        'svc-auto-f3': 'Brakes and consumables',
+        'svc-auto-f1': 'Computer diagnostics',
+        'svc-auto-f2': 'Engine and suspension repair',
+        'svc-auto-f3': 'Brake system repair',
+        'svc-auto-f4': 'Vehicle maintenance service',
+        'svc-auto-f5': 'AC inspection and recharge',
+        'svc-auto-f6': 'Tire change and tire hotel',
 
         'svc-body-title': 'Body Repair',
         'svc-body-desc': 'Bodywork and restoration to factory condition',
-        'svc-body-f1': 'Chassis straightening, welding, painting, etc.',
-        'svc-body-f2': 'Repair and parts replacement',
-        'svc-body-f3': 'Trusted shop for leading insurers',
+        'svc-body-f1': 'Repair and replacement of parts',
+        'svc-body-f2': 'Sheet metal and paint services',
+        'svc-body-f3': 'Trusted service for insurance companies',
 
-        'svc-cosmo-title': 'Auto Detailing',
+        'svc-cosmo-title': 'Carwash and Auto Detailing',
         'svc-cosmo-desc': 'Full detailing, exterior and interior wash',
         'svc-cosmo-f1': 'Polishing and waxing',
         'svc-cosmo-f2': 'Interior shampooing',
-        'svc-cosmo-f3': 'Paint protection, PPF and ceramic coating',
+        'svc-cosmo-f3': 'Applying ceramic coating protection, applying protective film and more',
 
         'svc-gtp-title': 'Annual Tech Inspection',
         'svc-gtp-desc': 'Annual technical inspection with fast service',
@@ -210,14 +228,14 @@ const translations = {
 
         'svc-uph-title': 'Auto Upholstery',
         'svc-uph-desc': 'Interior repairs, reupholstery of seats, steering wheel, panels',
-        'svc-uph-f1': 'Seat and steering wheel reupholstery',
-        'svc-uph-f2': 'Custom materials and projects',
+        'svc-uph-f1': 'Reupholstering of seats, steering wheel and ceiling',
+        'svc-uph-f2': 'Implementation of individual projects',
         'svc-uph-f3': 'Interior restoration',
 
         'svc-pdr-title': 'PDR',
         'svc-pdr-desc': 'Paintless dent repair',
-        'svc-pdr-f1': 'Removal of small dents',
-        'svc-pdr-f2': 'No damage to original paint',
+        'svc-pdr-f1': 'Removal of hail dents',
+        'svc-pdr-f2': 'Paintless technology',
         'svc-pdr-f3': 'Fast and effective',
 
         'svc-glass-title': 'Cracked Glass Repair',
@@ -228,15 +246,15 @@ const translations = {
 
         'svc-sales-title': 'Car Sales',
         'svc-sales-desc': 'Used cars with warranty',
-        'svc-sales-f1': 'Imports from Dubai, Canada, USA and Europe',
+        'svc-sales-f1': 'Imports from Europe, Canada, USA and Dubai',
         'svc-sales-f2': 'Guaranteed real mileage and condition',
         'svc-sales-f3': 'Registration assistance',
 
         'svc-ins-title': 'Insurance',
-        'svc-ins-desc': 'Consultation and issuing of most insurance policies',
+        'svc-ins-desc': 'Consultations and inclusion of all automobile and other types of insurance, including:',
         'svc-ins-f1': 'Liability insurance',
-        'svc-ins-f2': 'Comprehensive (CASCO)',
-        'svc-ins-f3': 'Claims assistance',
+        'svc-ins-f2': 'Аuto insurance',
+        'svc-ins-f3': 'Auto assistance',
 
         'svc-tyre-title': 'Tire Service',
         'svc-tyre-desc': 'Modern equipment and skilled mechanics',
@@ -246,7 +264,7 @@ const translations = {
         
         // About Us
         'about-title': 'About Us',
-        'about-text-1': 'Auto Miami is a premium car service chain in Sofia since 2008. Today, our centers offer a full range of automotive services including maintenance, technical support, annual technical inspections, car wash, auto detailing, tuning, insurance, and car sales.',
+        'about-text-1': 'Auto complexes Miami is a premium car service chain in Sofia since 2008. Today, our centers offer a full range of automotive services including maintenance, technical support, annual technical inspections, car wash, auto detailing, tuning, insurance, and car sales.',
         'about-text-2': 'With over 15 years of experience and skilled mechanics and specialists, Auto Miami has become a preferred partner for private clients, corporate fleets, and automotive enthusiasts.',
         
         // Insurance
@@ -308,10 +326,14 @@ const translations = {
         'complex-4-service-12': 'Accessories & Tuning Parts',
         'complex-4-service-13': 'Coffee & Wi‑Fi Area',
         
-        'complex-1-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
+        'service-working-hours': 'Service working hours',
+        'carwash-working-hours': 'Carwash working hours',
+        'complex-1-service-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
+        'complex-1-carwash-hours': 'Mon-sun: 9:00–18:00',
         'complex-2-hours': 'Mon-Fri: 8:30–17:30, Sat/Sun: Closed',
         'complex-3-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
         'complex-4-hours': 'Mon–Fri: 9:00–18:00, Sat/Sun: Closed',
+        'weekend-closed': 'Sat/Sun: Closed',
         
         // Documents Section
         'documents-title': 'Documents',
