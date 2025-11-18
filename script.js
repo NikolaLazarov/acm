@@ -1,5 +1,11 @@
 // ===== TRANSLATION SYSTEM =====
-const translations = {
+// Google Docs document ID for translations
+const TRANSLATIONS_DOC_ID = '14aR7eUnF06789b7d6yObK7zAeWRShaB5MglREfoIqPY';
+// Export as plain text - you can also use 'html' or 'txt' format
+const TRANSLATIONS_URL = `https://docs.google.com/document/d/${TRANSLATIONS_DOC_ID}/export?format=txt`;
+
+// Default translations (fallback if loading fails)
+const defaultTranslations = {
     bg: {
         // Navigation
         'nav-home': 'Начало',
@@ -148,18 +154,19 @@ const translations = {
         'complex-4-service-12': 'Аксесоари и тунинг части',
         'complex-4-service-13': 'Кафе и зона с Wi‑Fi',
         
-        'service-working-hours': 'Работно време сервизи',
+        'service-phone-number': 'Телефон сервиз',
+        'service-working-hours': 'Работно време сервиз',
+        'carwash-phone-number': 'Телефон автомивка',
         'carwash-working-hours': 'Работно време автомивка',
+        'gtp-phone-number': 'Телефон ГТП',
         'gtp-working-hours': 'Работно време ГТП',
-        'gtp-phone-number': 'Телефон ГТП: ',
         'complex-1-service-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
         'complex-1-carwash-hours': 'Пон–Нед: 9:00–18:00',
-        'complex-1-gtp-hours': 'Пон–Нед: 9:00–18:00',
         'complex-1-gtp-hours': 'Пон–Нед: 9:00–18:00',
         'complex-2-hours': 'Пон–Пет: 8:30–17:30, Съб/Нед: Почивни',
         'complex-3-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
         'complex-4-service-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
-        'complex-4-carwash-hours': 'Пон–Нед: 9:00–18:00',
+        'complex-4-carwash-hours': 'Пон–Нед: 9:00–18:00, Съб/Нед: Почивни',
         'complex-4-gtp-hours': 'Пон–Нед: 9:00–18:00',
         'weekend-closed': 'Събота/Неделя: Почивни',
         
@@ -327,12 +334,20 @@ const translations = {
         'complex-4-service-13': 'Coffee & Wi‑Fi Area',
         
         'service-working-hours': 'Service working hours',
+        'service-phone-number': 'Service phone number',
         'carwash-working-hours': 'Carwash working hours',
+        'carwash-phone-number': 'Carwash phone number',
+        'gtp-working-hours': 'Annual Technical Inspection working hours',
+        'gtp-phone-number': 'Annual Technical Inspection phone number',
         'complex-1-service-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
-        'complex-1-carwash-hours': 'Mon-sun: 9:00–18:00',
+        'complex-1-carwash-hours': 'Mon-Sun: 9:00–18:00',
+        'complex-1-gtp-hours': 'Mon-Sun: 9:00–18:00',
+        'complex-4-gtp-hours': 'Mon-Sun: 9:00–18:00',
         'complex-2-hours': 'Mon-Fri: 8:30–17:30, Sat/Sun: Closed',
         'complex-3-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
-        'complex-4-hours': 'Mon–Fri: 9:00–18:00, Sat/Sun: Closed',
+        'complex-4-service-hours': 'Mon–Fri: 9:00–18:00, Sat/Sun: Closed',
+        'complex-4-carwash-hours': 'Mon–Fri: 9:00–18:00, Sat/Sun: Closed',
+        
         'weekend-closed': 'Sat/Sun: Closed',
         
         // Documents Section
@@ -351,6 +366,63 @@ const translations = {
         'lang-en': 'EN'
     }
 };
+
+// Translations object (will be loaded from Google Docs)
+let translations = { ...defaultTranslations };
+
+// Load translations from Google Docs
+async function loadTranslations() {
+    try {
+        const response = await fetch(TRANSLATIONS_URL);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        let text = (await response.text()).trim();
+        
+        // Clean up any extra whitespace or newlines that Google Docs might add
+        text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+        
+        // The document format is: bg: { ... }, en: { ... }
+        // We need to wrap it in braces to make it a valid object
+        let objectText = text.trim();
+        
+        // If it starts with bg:, wrap it in braces
+        if (objectText.startsWith('bg:')) {
+            objectText = '{' + objectText + '}';
+        }
+        // If it already starts with {, use it as is
+        else if (!objectText.startsWith('{')) {
+            // Try to find the object content
+            const match = objectText.match(/(bg\s*:\s*\{[\s\S]*en\s*:\s*\{[\s\S]*\})/);
+            if (match) {
+                objectText = '{' + match[1] + '}';
+            } else {
+                // Last resort: wrap the whole thing
+                objectText = '{' + objectText + '}';
+            }
+        }
+        
+        // Try to evaluate as JavaScript object
+        try {
+            const parsed = new Function('return ' + objectText)();
+            if (parsed && parsed.bg && parsed.en) {
+                translations = parsed;
+                console.log('Successfully loaded translations from Google Docs');
+                return;
+            }
+        } catch (e) {
+            console.warn('Failed to parse translations document:', e);
+            console.log('Attempted to parse:', objectText.substring(0, 200) + '...');
+        }
+        
+        console.warn('Could not parse translations from Google Docs, using default translations');
+        console.log('Document content preview:', text.substring(0, 500));
+    } catch (error) {
+        console.error('Error loading translations from Google Docs:', error);
+        console.log('Using default translations as fallback');
+    }
+}
 
 let currentLanguage = 'bg';
 
@@ -396,7 +468,10 @@ function updatePageContent() {
     }
 }
 
-function initLanguageSystem() {
+async function initLanguageSystem() {
+    // Load translations from Google Drive first
+    await loadTranslations();
+    
     // Check for saved language preference
     const savedLanguage = localStorage.getItem('preferredLanguage');
     if (savedLanguage && translations[savedLanguage]) {
@@ -477,8 +552,8 @@ document.addEventListener('DOMContentLoaded', function () {
     handleScroll();
 });
 
-function initializeApp() {
-    initLanguageSystem();
+async function initializeApp() {
+    await initLanguageSystem();
     initSmoothScroll();
     initNavigation();
     initGSAPAnimations();

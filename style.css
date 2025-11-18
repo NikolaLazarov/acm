@@ -2076,3 +2076,8 @@ i + a {
     word-break: break-all;
   }
 }
+
+hr{
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 5px;
+}
