@@ -126,17 +126,22 @@ const defaultTranslations = {
         'complex-1-service-5': 'ГТП',
         'complex-1-service-6': 'Аксесоари и тунинг части',
         'complex-1-service-7': 'Кафе и зона с Wi‑Fi',
+        'complex-1-service-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
+        'complex-1-carwash-hours': 'Пон–Нед: 9:00–18:00',
+        'complex-1-gtp-hours': 'Пон–Нед: 9:00–18:00',
         
         'complex-2-name': 'Авто Маями 2',
         'complex-2-address': 'кв. Кръстова вада, ул. „Манфред Вьорнер" 9, гр. София',
         'complex-2-service-1': 'Автосервиз',
         'complex-2-service-2': 'Гуми сервиз',
         'complex-2-service-3': 'Аксесоари и тунинг части',
+        'complex-2-hours': 'Пон–Пет: 8:30–17:30, Съб/Нед: Почивни',
         
         'complex-3-name': 'Авто Маями 3',
         'complex-3-address': 'Карпузица, бул. „Цар Борис III" 270, гр. София',
         'complex-3-service-1': 'Автосервиз',
         'complex-3-service-2': 'Авторепаратура',
+        'complex-3-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
         
         'complex-4-name': 'Авто Маями 4',
         'complex-4-address': 'бул. „Рожен" 115, гр. София',
@@ -153,6 +158,9 @@ const defaultTranslations = {
         'complex-4-service-11': 'Продажба на автомобили',
         'complex-4-service-12': 'Аксесоари и тунинг части',
         'complex-4-service-13': 'Кафе и зона с Wi‑Fi',
+        'complex-4-service-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
+        'complex-4-carwash-hours': 'Пон–Нед: 9:00–18:00, Съб/Нед: Почивни',
+        'complex-4-gtp-hours': 'Пон–Нед: 9:00–18:00',
         
         'service-phone-number': 'Телефон сервиз',
         'service-working-hours': 'Работно време сервиз',
@@ -160,14 +168,6 @@ const defaultTranslations = {
         'carwash-working-hours': 'Работно време автомивка',
         'gtp-phone-number': 'Телефон ГТП',
         'gtp-working-hours': 'Работно време ГТП',
-        'complex-1-service-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
-        'complex-1-carwash-hours': 'Пон–Нед: 9:00–18:00',
-        'complex-1-gtp-hours': 'Пон–Нед: 9:00–18:00',
-        'complex-2-hours': 'Пон–Пет: 8:30–17:30, Съб/Нед: Почивни',
-        'complex-3-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
-        'complex-4-service-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
-        'complex-4-carwash-hours': 'Пон–Нед: 9:00–18:00, Съб/Нед: Почивни',
-        'complex-4-gtp-hours': 'Пон–Нед: 9:00–18:00',
         'weekend-closed': 'Събота/Неделя: Почивни',
         
         // Documents Section    
@@ -305,17 +305,22 @@ const defaultTranslations = {
         'complex-1-service-5': 'Annual Technical Inspection',
         'complex-1-service-6': 'Accessories & Tuning Parts',
         'complex-1-service-7': 'Coffee & Wi‑Fi Area',
+        'complex-1-service-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
+        'complex-1-carwash-hours': 'Mon-Sun: 9:00–18:00',
+        'complex-1-gtp-hours': 'Mon-Sun: 9:00–18:00',
         
         'complex-2-name': 'Auto Miami 2',
         'complex-2-address': 'Krustova Vada, Manfred Worner St 9, Sofia',
         'complex-2-service-1': 'Auto Service',
         'complex-2-service-2': 'Tire Service',
         'complex-2-service-3': 'Accessories & Tuning Parts',
+        'complex-2-hours': 'Mon-Fri: 8:30–17:30, Sat/Sun: Closed',
         
         'complex-3-name': 'Auto Miami 3',
         'complex-3-address': 'Karpuzitsa, Tsar Boris III Blvd 270, Sofia',
         'complex-3-service-1': 'Auto Service',
         'complex-3-service-2': 'Body Repair',
+        'complex-3-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
         
         'complex-4-name': 'Auto Miami 4',
         'complex-4-address': 'Rozhen Blvd 115, Sofia',
@@ -332,6 +337,9 @@ const defaultTranslations = {
         'complex-4-service-11': 'Car Sales',
         'complex-4-service-12': 'Accessories & Tuning Parts',
         'complex-4-service-13': 'Coffee & Wi‑Fi Area',
+        'complex-4-gtp-hours': 'Mon-Sun: 9:00–18:00',
+        'complex-4-service-hours': 'Mon–Fri: 9:00–18:00, Sat/Sun: Closed',
+        'complex-4-carwash-hours': 'Mon–Fri: 9:00–18:00, Sat/Sun: Closed',
         
         'service-working-hours': 'Service working hours',
         'service-phone-number': 'Service phone number',
@@ -339,15 +347,6 @@ const defaultTranslations = {
         'carwash-phone-number': 'Carwash phone number',
         'gtp-working-hours': 'Annual Technical Inspection working hours',
         'gtp-phone-number': 'Annual Technical Inspection phone number',
-        'complex-1-service-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
-        'complex-1-carwash-hours': 'Mon-Sun: 9:00–18:00',
-        'complex-1-gtp-hours': 'Mon-Sun: 9:00–18:00',
-        'complex-4-gtp-hours': 'Mon-Sun: 9:00–18:00',
-        'complex-2-hours': 'Mon-Fri: 8:30–17:30, Sat/Sun: Closed',
-        'complex-3-hours': 'Mon-Fri: 9:00–18:00, Sat/Sun: Closed',
-        'complex-4-service-hours': 'Mon–Fri: 9:00–18:00, Sat/Sun: Closed',
-        'complex-4-carwash-hours': 'Mon–Fri: 9:00–18:00, Sat/Sun: Closed',
-        
         'weekend-closed': 'Sat/Sun: Closed',
         
         // Documents Section
