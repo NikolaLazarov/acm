@@ -1,13 +1,9 @@
-// ===== TRANSLATION SYSTEM =====
-// Google Docs document ID for translations
 const TRANSLATIONS_DOC_ID = '14aR7eUnF06789b7d6yObK7zAeWRShaB5MglREfoIqPY';
-// Export as plain text - you can also use 'html' or 'txt' format
 const TRANSLATIONS_URL = `https://docs.google.com/document/d/${TRANSLATIONS_DOC_ID}/export?format=txt`;
 
 // Default translations (fallback if loading fails)
 const defaultTranslations = {
     bg: {
-        // Navigation
         'nav-home': 'Начало',
         'nav-services': 'Услуги',
         'nav-about': 'За нас',
@@ -15,7 +11,6 @@ const defaultTranslations = {
         'nav-pricing': 'Цени',
         'nav-complexes': 'Сервизи',
         
-        // Hero Section
         'hero-title-1': 'ВСИЧКО ЗА',
         'hero-title-2': 'ВАШИЯ АВТОМОБИЛ',
         'hero-title-3': 'НА ЕДНО МЯСТО',
@@ -25,7 +20,6 @@ const defaultTranslations = {
         'hero-feature-3': 'Пълен спектър услуги',
         'hero-cta': 'Разгледайте предлаганите услугите',
         
-        // Services (updated)
         'our-services': 'Предлагани услуги',
         'svc-auto-title': 'Автосервиз',
         'svc-auto-desc': 'за всички видове ремонти',
@@ -159,7 +153,7 @@ const defaultTranslations = {
         'complex-4-service-12': 'Аксесоари и тунинг части',
         'complex-4-service-13': 'Кафе и зона с Wi‑Fi',
         'complex-4-service-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
-        'complex-4-carwash-hours': 'Пон–Нед: 9:00–18:00, Съб/Нед: Почивни',
+        'complex-4-carwash-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
         'complex-4-gtp-hours': 'Пон–Нед: 9:00–18:00',
         
         'service-phone-number': 'Телефон сервиз',
@@ -179,7 +173,7 @@ const defaultTranslations = {
         // Footer
         'footer-description': 'Вашият доверен партньор за всички автомобилни нужди в София.',
         'footer-navigation': 'Навигация',
-        'footer-copyright': '© 2025 AutoComplex Miami. Всички права запазени.',
+        'footer-copyright': 'AutoComplex Miami. Всички права запазени.',
         
         // Language toggle
         'lang-bg': 'БГ',
@@ -358,7 +352,7 @@ const defaultTranslations = {
         // Footer
         'footer-description': 'Your trusted partner for all automotive needs in Sofia.',
         'footer-navigation': 'Navigation',
-        'footer-copyright': '© 2025 AutoComplex Miami. All rights reserved.',
+        'footer-copyright': 'AutoComplex Miami. All rights reserved.',
         
         // Language toggle
         'lang-bg': 'BG',
@@ -366,10 +360,9 @@ const defaultTranslations = {
     }
 };
 
-// Translations object (will be loaded from Google Docs)
+
 let translations = { ...defaultTranslations };
 
-// Load translations from Google Docs
 async function loadTranslations() {
     try {
         const response = await fetch(TRANSLATIONS_URL);
@@ -379,35 +372,28 @@ async function loadTranslations() {
         
         let text = (await response.text()).trim();
         
-        // Clean up any extra whitespace or newlines that Google Docs might add
         text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
         
-        // The document format is: bg: { ... }, en: { ... }
-        // We need to wrap it in braces to make it a valid object
         let objectText = text.trim();
         
-        // If it starts with bg:, wrap it in braces
         if (objectText.startsWith('bg:')) {
             objectText = '{' + objectText + '}';
         }
-        // If it already starts with {, use it as is
+        
         else if (!objectText.startsWith('{')) {
-            // Try to find the object content
             const match = objectText.match(/(bg\s*:\s*\{[\s\S]*en\s*:\s*\{[\s\S]*\})/);
             if (match) {
                 objectText = '{' + match[1] + '}';
             } else {
-                // Last resort: wrap the whole thing
                 objectText = '{' + objectText + '}';
             }
         }
         
-        // Try to evaluate as JavaScript object
+    
         try {
             const parsed = new Function('return ' + objectText)();
             if (parsed && parsed.bg && parsed.en) {
                 translations = parsed;
-                console.log('Successfully loaded translations from Google Docs');
                 return;
             }
         } catch (e) {
@@ -416,7 +402,6 @@ async function loadTranslations() {
         }
         
         console.warn('Could not parse translations from Google Docs, using default translations');
-        console.log('Document content preview:', text.substring(0, 500));
     } catch (error) {
         console.error('Error loading translations from Google Docs:', error);
         console.log('Using default translations as fallback');
@@ -425,7 +410,6 @@ async function loadTranslations() {
 
 let currentLanguage = 'bg';
 
-// Backward compatibility shim for older inline handlers
 function changeLanguage(lang) {
     if (lang === 'bg' || lang === 'en') {
         setLanguage(lang);
@@ -446,8 +430,11 @@ function updatePageContent() {
     const elements = document.querySelectorAll('[data-translate]');
     elements.forEach(element => {
         const key = element.getAttribute('data-translate');
-        if (translations[currentLanguage][key]) {
+        if(translations[currentLanguage][key]){
             element.textContent = translations[currentLanguage][key];
+        }
+        if (key == 'footer-copyright') {
+            element.textContent = '© ' + new Date().getFullYear() + ' ' + translations[currentLanguage][key];
         }
     });
 
@@ -468,19 +455,14 @@ function updatePageContent() {
 }
 
 async function initLanguageSystem() {
-    // Load translations from Google Drive first
-    await loadTranslations();
-    
-    // Check for saved language preference
+    updatePageContent();
     const savedLanguage = localStorage.getItem('preferredLanguage');
     if (savedLanguage && translations[savedLanguage]) {
         currentLanguage = savedLanguage;
     }
     
-    // Set initial language
     setLanguage(currentLanguage);
 
-    // Wire up single toggle button(s)
     const toggleButtons = document.querySelectorAll('.lang-toggle-btn');
     toggleButtons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -488,9 +470,9 @@ async function initLanguageSystem() {
             setLanguage(next);
         });
     });
+    await loadTranslations();
 }
 
-// ===== INITIALIZATION =====
 var isAnchorScrolling = false;
 document.addEventListener('DOMContentLoaded', function () {
     initializeApp();
@@ -552,19 +534,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 async function initializeApp() {
-    await initLanguageSystem();
     initSmoothScroll();
     initNavigation();
     initGSAPAnimations();
     initScrollAnimations();
-    //initContactForm();
     initMap();
-    //initVideoControls();
+    await initLanguageSystem();
     initServiceCards();
     initPackageCards();
     initMobileDrawer();
     initMobileDrawerSecondary();
-    initPhotoSwipeGallery();
+    // initPhotoSwipeGallery();
 }
 
 // function initPhotoSwipeGallery() {
@@ -615,7 +595,6 @@ async function initializeApp() {
 //     });
 // }
 
-// ===== SMOOTH SCROLLING WITH LENIS =====
 let lenis;
 
 function initSmoothScroll() {
@@ -657,7 +636,6 @@ function initSmoothScroll() {
     });
 }
 
-// ===== CUSTOM CURSOR =====
 // function initCustomCursor() {
 //     const cursor = document.querySelector('.cursor');
 //     const cursorDot = document.querySelector('.cursor-dot');
@@ -705,15 +683,12 @@ function initSmoothScroll() {
 // }
 
 
-// ===== NAVIGATION =====
 function initNavigation() {
     const header = document.getElementById('main-header');
     const hamburger = document.querySelector('#hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-
-    // Legacy mobile menu kept for desktop fallback only
     if (hamburger && navMenu) {
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -811,7 +786,6 @@ function closeDraweronX2() {
 //     });
 // }
 
-// ===== MOBILE DRAWER =====
 function initMobileDrawer() {
     const hamburger = document.getElementById('burger-icon');
     const drawer = document.getElementById('mobile-drawer');
@@ -824,7 +798,6 @@ function initMobileDrawer() {
         drawer.classList.add('open');
         close.classList.add('open')
         document.body.style.overflow = 'hidden';
-        // Stagger reveal links
         links.forEach((link, i) => {
             link.style.transitionDelay = `${i + 1 * 200}ms`;
             link.style.opacity = '1';
@@ -841,13 +814,10 @@ function initMobileDrawer() {
         if (isOpen) closeDrawer(); else openDrawer();
     });
 
-    // Close on background click
     drawer.addEventListener('click', (e) => {
-        // Only close when tapping outside the menu panel; do not toggle when header or other elements are clicked
         if (e.target === drawer) closeDrawer();
     });
 
-    // Close when clicking any drawer link
     links.forEach(link => {
         if (link.id === 'drawer-options') {
             return;
@@ -855,7 +825,6 @@ function initMobileDrawer() {
         link.addEventListener('click', () => closeDrawer());
     });
     
-    // Close with ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
     });
@@ -866,9 +835,7 @@ function initMobileDrawerSecondary() {
     const drawer = document.getElementById('mobile-drawer-options');
     const arrowBack = document.getElementById('arrow-back');
     const insideContainer = document.getElementById('inside-container');
-    console.log(arrowBack);
     const links = drawer ? drawer.querySelectorAll('.mobile-link-options') : [];
-    console.log(close)
     if (!optionsAnchor || !drawer) return;
 
     function openDrawer() {
@@ -877,7 +844,6 @@ function initMobileDrawerSecondary() {
         insideContainer.classList.add('just-between');
 
         document.body.style.overflow = 'hidden';
-        // Stagger reveal links
         links.forEach((link, i) => {
             link.style.transitionDelay = `${i + 1 * 500}ms`;
             link.style.opacity = '1';
@@ -900,23 +866,18 @@ function initMobileDrawerSecondary() {
     //     if (e.target === drawer) closeDrawerSecondary();
     // });
 
-    // Close when clicking any drawer link
     links.forEach(link => link.addEventListener('click', () => closeDrawerSecondary()));
-    console.log(links)
 
-    // Close with ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawerSecondary();
     });
 }
 
 
-// ===== GSAP ANIMATIONS =====
 function initGSAPAnimations() {
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-    // Hero title animation
     const heroTitleLines = document.querySelectorAll('.hero-title-line');
 
     gsap.timeline()
@@ -952,7 +913,6 @@ function initGSAPAnimations() {
             ease: "power2.out"
         }, "-=0.3");
 
-    // Service cards animation
     gsap.fromTo('.service-card', {
         y: 100,
         opacity: 0,
@@ -971,7 +931,6 @@ function initGSAPAnimations() {
         }
     });
 
-    // Interior features animation
     gsap.fromTo('.feature-item', {
         x: -100,
         opacity: 0
@@ -987,7 +946,6 @@ function initGSAPAnimations() {
         }
     });
 
-    // Gallery animation
     gsap.fromTo('.gallery-item', {
         scale: 0,
         opacity: 0,
@@ -1005,7 +963,6 @@ function initGSAPAnimations() {
         }
     });
 
-    // Detailing packages animation
     gsap.fromTo('.detailing-package', {
         y: 80,
         opacity: 0,
@@ -1023,9 +980,6 @@ function initGSAPAnimations() {
         }
     });
 
-    // Insurance companies animation removed per request
-
-    // Location cards animation
     gsap.fromTo('.location-card', {
         x: 100,
         opacity: 0
@@ -1041,7 +995,6 @@ function initGSAPAnimations() {
         }
     });
 
-    // Contact form animation
     gsap.fromTo('.form-group', {
         y: 50,
         opacity: 0
@@ -1057,7 +1010,6 @@ function initGSAPAnimations() {
         }
     });
 
-    // Section titles animation
     gsap.utils.toArray('.section-title').forEach(title => {
         gsap.fromTo(title, {
             y: 50,
@@ -1073,11 +1025,8 @@ function initGSAPAnimations() {
             }
         });
     });
-
-    // Parallax disabled for static hero image
 }
 
-// ===== SCROLL ANIMATIONS =====
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -1092,7 +1041,6 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // Observe elements for animations
     const animationElements = document.querySelectorAll(
         '.fade-in-up, .scale-in, .slide-in-left, .slide-in-right'
     );
@@ -1101,7 +1049,6 @@ function initScrollAnimations() {
         observer.observe(el);
     });
 
-    // Counter animation for statistics
     const counters = document.querySelectorAll('[data-counter]');
 
     counters.forEach(counter => {
@@ -1126,8 +1073,6 @@ function initScrollAnimations() {
     });
 }
 
-// ===== CONTACT FORM =====
-// function initContactForm() {
 //     const form = document.getElementById('contact-form');
 //     const submitBtn = document.querySelector('.btn-submit');
 
@@ -1186,67 +1131,61 @@ function initScrollAnimations() {
 // }
 
 // ===== NOTIFICATION SYSTEM =====
-function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-            <span>${message}</span>
-        </div>
-        <button class="notification-close">&times;</button>
-    `;
+// function showNotification(message, type = 'info') {
+//     const notification = document.createElement('div');
+//     notification.className = `notification notification-${type}`;
+//     notification.innerHTML = `
+//         <div class="notification-content">
+//             <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+//             <span>${message}</span>
+//         </div>
+//         <button class="notification-close">&times;</button>
+//     `;
 
-    // Add notification styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        background: ${type === 'success' ? 'var(--color-primary)' : '#ef4444'};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow-lg);
-        z-index: 10000;
-        transform: translateX(400px);
-        transition: var(--transition-base);
-        max-width: 400px;
-    `;
+//     notification.style.cssText = `
+//         position: fixed;
+//         top: 100px;
+//         right: 20px;
+//         background: ${type === 'success' ? 'var(--color-primary)' : '#ef4444'};
+//         color: white;
+//         padding: 1rem 1.5rem;
+//         border-radius: var(--border-radius);
+//         box-shadow: var(--shadow-lg);
+//         z-index: 10000;
+//         transform: translateX(400px);
+//         transition: var(--transition-base);
+//         max-width: 400px;
+//     `;
 
-    document.body.appendChild(notification);
+//     document.body.appendChild(notification);
 
-    // Animate in
-    setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 100);
+//     setTimeout(() => {
+//         notification.style.transform = 'translateX(0)';
+//     }, 100);
 
-    // Auto remove
-    setTimeout(() => {
-        removeNotification(notification);
-    }, 5000);
+//     setTimeout(() => {
+//         removeNotification(notification);
+//     }, 5000);
 
-    // Manual close
-    const closeBtn = notification.querySelector('.notification-close');
-    closeBtn.addEventListener('click', () => {
-        removeNotification(notification);
-    });
-}
+//     const closeBtn = notification.querySelector('.notification-close');
+//     closeBtn.addEventListener('click', () => {
+//         removeNotification(notification);
+//     });
+// }
 
-function removeNotification(notification) {
-    notification.style.transform = 'translateX(400px)';
-    setTimeout(() => {
-        if (notification.parentElement) {
-            notification.parentElement.removeChild(notification);
-        }
-    }, 300);
-}
+// function removeNotification(notification) {
+//     notification.style.transform = 'translateX(400px)';
+//     setTimeout(() => {
+//         if (notification.parentElement) {
+//             notification.parentElement.removeChild(notification);
+//         }
+//     }, 300);
+// }
 
-// ===== MAP INITIALIZATION =====
 function initMap() {
     const mapContainer = document.getElementById('map');
     if (!mapContainer) return;
 
-    // Simple map placeholder with styling
     mapContainer.innerHTML = `
         <div style="
             width: 100%;
@@ -1268,8 +1207,6 @@ function initMap() {
         </div>
     `;
 
-    // You can integrate Google Maps here
-    // Example: initGoogleMaps() or initMapbox()
 }
 
 // ===== VIDEO CONTROLS =====
@@ -1325,7 +1262,6 @@ function initServiceCards() {
             });
         });
 
-        // Add click ripple effect
         card.addEventListener('click', (e) => {
             const ripple = document.createElement('div');
             const rect = card.getBoundingClientRect();
@@ -1364,7 +1300,6 @@ function initServiceCards() {
     });
 }
 
-// ===== PACKAGE CARDS INTERACTION =====
 function initPackageCards() {
     const packages = document.querySelectorAll('.detailing-package');
 
@@ -1396,9 +1331,6 @@ function logoImgClick() {
     location.href = '#home';
 }
 
-// ===== UTILITY FUNCTIONS =====
-
-// Throttle function for performance
 function throttle(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -1411,7 +1343,6 @@ function throttle(func, wait) {
     };
 }
 
-// Debounce function for performance
 function debounce(func, wait, immediate) {
     let timeout;
     return function executedFunction(...args) {
@@ -1426,26 +1357,19 @@ function debounce(func, wait, immediate) {
     };
 }
 
-// ===== PERFORMANCE OPTIMIZATIONS =====
 
-// Optimize scroll events
 const optimizedScrollHandler = throttle(() => {
-    // Handle scroll events here
 }, 16);
 
 window.addEventListener('scroll', optimizedScrollHandler);
 
-// Optimize resize events
 const optimizedResizeHandler = debounce(() => {
-    // Handle resize events here
     ScrollTrigger.refresh();
 }, 250);
 
 window.addEventListener('resize', optimizedResizeHandler);
 
-// ===== ACCESSIBILITY =====
 
-// Keyboard navigation
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         // Close mobile menu
@@ -1460,7 +1384,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Focus management
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Tab') {
         document.body.classList.add('keyboard-nav');
@@ -1471,7 +1394,6 @@ document.addEventListener('mousedown', () => {
     document.body.classList.remove('keyboard-nav');
 });
 
-// ===== PRELOADER (Optional) =====
 function initPreloader() {
     const preloader = document.createElement('div');
     preloader.className = 'preloader';
@@ -1518,16 +1440,7 @@ function initPreloader() {
     });
 }
 
-// Initialize preloader
-// initPreloader();
 
-// ===== CONSOLE STYLING =====
-console.log('%c🚗 AutoComplex Miami - Modern Car Service Website',
-    'color: #dc2626; font-size: 20px; font-weight: bold;');
-console.log('%cBuilt with vanilla JavaScript, GSAP, and modern web technologies',
-    'color: #6b7280; font-size: 14px;');
-
-// ===== ERROR HANDLING =====
 window.addEventListener('error', (e) => {
     console.error('JavaScript Error:', e.error);
 });
