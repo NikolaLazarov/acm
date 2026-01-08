@@ -1,7 +1,3 @@
-const TRANSLATIONS_DOC_ID = '14aR7eUnF06789b7d6yObK7zAeWRShaB5MglREfoIqPY';
-const TRANSLATIONS_URL = `https://docs.google.com/document/d/${TRANSLATIONS_DOC_ID}/export?format=txt`;
-
-// Default translations (fallback if loading fails)
 const defaultTranslations = {
     bg: {
         'nav-home': 'Начало',
@@ -31,7 +27,7 @@ const defaultTranslations = {
         'svc-auto-f6': 'Смяна на гуми и хотел',
 
         'svc-body-title': 'Авторепаратура',
-        'svc-body-desc': 'Авторемонтни работи и възстановяване на заводския вид на автомобили',
+        'svc-body-desc': 'Доверен сервиз на водещите застрахователни компании',
         'svc-body-f1': 'Ремонт и смяна на детайли',
         'svc-body-f2': 'Тенекеджийски и бояджийски услуги',
         'svc-body-f3': 'Доверен сервиз на застрахователни компании',
@@ -142,13 +138,13 @@ const defaultTranslations = {
         'complex-4-service-1': 'Автосервиз',
         'complex-4-service-2': 'Автомивка и Автокозметика',
         'complex-4-service-3': 'Авторепаратура',
-        'complex-4-service-4': 'Гуми сервиз',
+        'complex-4-service-4': 'Гуми сервиз и хотел',
         'complex-4-service-5': 'ГТП',
         'complex-4-service-6': 'Застраховки',
         'complex-4-service-7': 'Автотапицерия',
         'complex-4-service-8': 'PDR',
         'complex-4-service-9': 'Лепене на спукани стъкла',
-        'complex-4-service-10': 'Тунинг & чип тунинг',
+        'complex-4-service-10': 'Тунинг',
         'complex-4-service-11': 'Продажба на автомобили',
         'complex-4-service-12': 'Аксесоари и тунинг части',
         'complex-4-service-13': 'Кафе и зона с Wi‑Fi',
@@ -210,7 +206,7 @@ const defaultTranslations = {
         'svc-auto-f6': 'Tire change and tire hotel',
 
         'svc-body-title': 'Body Repair',
-        'svc-body-desc': 'Bodywork and restoration to factory condition',
+        'svc-body-desc': 'Trusted service of the leading insurance companies',
         'svc-body-f1': 'Repair and replacement of parts',
         'svc-body-f2': 'Sheet metal and paint services',
         'svc-body-f3': 'Trusted service for insurance companies',
@@ -321,13 +317,13 @@ const defaultTranslations = {
         'complex-4-service-1': 'Auto Service',
         'complex-4-service-2': 'Auto Detailing',
         'complex-4-service-3': 'Body Repair',
-        'complex-4-service-4': 'Tire Service',
+        'complex-4-service-4': 'Tire Service & hotel',
         'complex-4-service-5': 'Annual Technical Inspection',
         'complex-4-service-6': 'Insurance',
         'complex-4-service-7': 'Auto Upholstery',
         'complex-4-service-8': 'PDR',
         'complex-4-service-9': 'Cracked Glass Repair',
-        'complex-4-service-10': 'Tuning & Chip Tuning',
+        'complex-4-service-10': 'Tuning',
         'complex-4-service-11': 'Car Sales',
         'complex-4-service-12': 'Accessories & Tuning Parts',
         'complex-4-service-13': 'Coffee & Wi‑Fi Area',
@@ -362,52 +358,6 @@ const defaultTranslations = {
 
 
 let translations = { ...defaultTranslations };
-
-async function loadTranslations() {
-    try {
-        const response = await fetch(TRANSLATIONS_URL);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        let text = (await response.text()).trim();
-        
-        text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
-        
-        let objectText = text.trim();
-        
-        if (objectText.startsWith('bg:')) {
-            objectText = '{' + objectText + '}';
-        }
-        
-        else if (!objectText.startsWith('{')) {
-            const match = objectText.match(/(bg\s*:\s*\{[\s\S]*en\s*:\s*\{[\s\S]*\})/);
-            if (match) {
-                objectText = '{' + match[1] + '}';
-            } else {
-                objectText = '{' + objectText + '}';
-            }
-        }
-        
-    
-        try {
-            const parsed = new Function('return ' + objectText)();
-            if (parsed && parsed.bg && parsed.en) {
-                translations = parsed;
-                return;
-            }
-        } catch (e) {
-            console.warn('Failed to parse translations document:', e);
-            console.log('Attempted to parse:', objectText.substring(0, 200) + '...');
-        }
-        
-        console.warn('Could not parse translations from Google Docs, using default translations');
-    } catch (error) {
-        console.error('Error loading translations from Google Docs:', error);
-        console.log('Using default translations as fallback');
-    }
-}
-
 let currentLanguage = 'bg';
 
 function changeLanguage(lang) {
@@ -443,19 +393,9 @@ function updatePageContent() {
     toggleButtons.forEach(btn => {
         btn.textContent = currentLanguage === 'bg' ? 'EN' : 'BG';
     });
-    
-    // Update page title and meta description
-    if (currentLanguage === 'en') {
-        document.title = 'Auto Miami - Bulgarian Auto Service Chain';
-        document.querySelector('meta[name="description"]').content = 'Auto Miami - trusted auto service in Sofia for all your vehicle needs. Tires, painting, upholstery, ceramic coating and full detailing.';
-    } else {
-        document.title = 'Auto Miami - Българска Верига Автосервизи';
-        document.querySelector('meta[name="description"]').content = 'Auto Miami - доверен автосервиз в София за всички нужди на вашия автомобил. Гуми, боядисване, тапицерия, керамично покритие и пълен детайлинг.';
-    }
 }
 
-async function initLanguageSystem() {
-    updatePageContent();
+function initLanguageSystem() {
     const savedLanguage = localStorage.getItem('preferredLanguage');
     if (savedLanguage && translations[savedLanguage]) {
         currentLanguage = savedLanguage;
@@ -470,7 +410,8 @@ async function initLanguageSystem() {
             setLanguage(next);
         });
     });
-    await loadTranslations();
+
+    updatePageContent();
 }
 
 var isAnchorScrolling = false;
@@ -539,7 +480,7 @@ async function initializeApp() {
     initGSAPAnimations();
     initScrollAnimations();
     initMap();
-    await initLanguageSystem();
+    initLanguageSystem();
     initServiceCards();
     initPackageCards();
     initMobileDrawer();
