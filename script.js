@@ -3,6 +3,7 @@ const defaultTranslations = {
         'nav-home': 'Начало',
         'nav-services': 'Услуги',
         'nav-about': 'За нас',
+        'nav-ins': 'Застраховки',
         'nav-gallery': 'Галерия',
         'nav-pricing': 'Цени',
         'nav-complexes': 'Сервизи',
@@ -10,7 +11,7 @@ const defaultTranslations = {
         'hero-title-1': 'ВСИЧКО ЗА',
         'hero-title-2': 'ВАШИЯ АВТОМОБИЛ',
         'hero-title-3': 'НА ЕДНО МЯСТО',
-        'hero-subtitle': 'Автокомплекси Маями предлага следните услуги: автосервиз, смяна на гуми, тенекеджийски и бояджийски услуги, автомивка и детайлинг, авто тапицерски услуги и други',
+        'hero-subtitle': 'Автокомплекси Маями предлага следните услуги: автосервиз, смяна на гуми, тенекеджийски и бояджийски услуги, автомивка и детайлинг, автотапицерски услуги и други',
         'hero-feature-1': 'Доверен сервиз',
         'hero-feature-2': 'Работим с водещи застрахователни компании',
         'hero-feature-3': 'Пълен спектър услуги',
@@ -33,7 +34,7 @@ const defaultTranslations = {
         'svc-body-f3': 'Доверен сервиз на застрахователни компании',
 
         'svc-cosmo-title': 'Автомивка и Автокозметика',
-        'svc-cosmo-desc': 'Пълен автодетайлинг, външно и вътрешно измиване',
+        'svc-cosmo-desc': 'Пълен автодетайлинг, външно и вътрешно почистване',
         'svc-cosmo-f1': 'Полиране и пастиране',
         'svc-cosmo-f2': 'Пране на салон',
         'svc-cosmo-f3': 'Нанасяне на защита с керамично покритие, полагане на защитно фолио и други',
@@ -74,15 +75,24 @@ const defaultTranslations = {
         'svc-ins-f2': 'Автокаско',
         'svc-ins-f3': 'Асистанс',
 
-        'svc-tyre-title': 'Гуми сервиз',
-        'svc-tyre-desc': 'Оборудван с модерна техника и квалифицирани механици',
-        'svc-tyre-f1': 'Монтаж, баланс, вулканизация',
-        'svc-tyre-f2': 'Сезонна смяна',
-        'svc-tyre-f3': 'Продажба на гуми и джанти по заявка',
+        'svc-oil-title': 'Внос и продажба на моторни масла',
+        'svc-oil-desc': 'Богат избор от моторни масла на водещи световни марки',
+        'svc-oil-f1': 'Вносител на масла',
+        'svc-oil-f2': 'Продажба на едно и дребно',
+        'svc-oil-f3': 'Моторни масла',
+        'svc-oil-f4': 'Трансмисионни масла',
+        'svc-oil-f5': 'Хидравлични масла',
+        'svc-oil-f6': 'Масла за скоростни кутии и др.',
+
+        // 'svc-tyre-title': 'Гуми сервиз',
+        // 'svc-tyre-desc': 'Оборудван с модерна техника и квалифицирани механици',
+        // 'svc-tyre-f1': 'Монтаж, баланс, вулканизация',
+        // 'svc-tyre-f2': 'Сезонна смяна',
+        // 'svc-tyre-f3': 'Продажба на гуми и джанти по заявка',
         
         // About Us
         'about-title': 'За нас',
-        'about-text-1': 'Автокомплекси Маями е утвърдена верига от премиум автосервизи в София от 2008 г. Към днешна дата сервизите предлагат пълна гама услуги за автомобили, включващи сервизна дейност, техническа поддръжка, годишни технически прегледи, авто мивка, автокозметика, детейлинг, тунинг, застраховки и продажба на автомобили.',
+        'about-text-1': 'Автокомплекси Маями е утвърдена верига от премиум автосервизи в София от 2008 г. Към днешна дата сервизите предлагат пълна гама услуги за автомобили, включващи сервизна дейност, техническа поддръжка, годишни технически прегледи, автомивка, автокозметика, детейлинг, тунинг, застраховки и продажба на автомобили.',
         'about-text-2': 'Със своите над 15 години опит, опитни механици и специалисти в своята дейност, верига Авто Маями се е превърнала в предпочитан партньор за частни клиенти, корпоративни автопаркове и автомобилни фенове.',
         
         // Insurance
@@ -92,7 +102,7 @@ const defaultTranslations = {
         // Gallery
         'gallery-title': 'Нашата Галерия',
         'gallery-subtitle': 'Разгледайте снимки от нашите автокомплекси и работата ни',
-        'gallery-sub-subtitle': 'Натисните някоя снимка за да я разгледате по-подробно',
+        'gallery-sub-subtitle': 'Натиснете някоя снимка за да я разгледате по-подробно',
         
         // Pricing
         'pricing-title': 'Цени',
@@ -114,7 +124,7 @@ const defaultTranslations = {
         'complex-1-service-3': 'Авторепаратура',
         'complex-1-service-4': 'Гуми сервиз',
         'complex-1-service-5': 'ГТП',
-        'complex-1-service-6': 'Аксесоари и тунинг части',
+        'complex-1-service-6': 'Продажба на масла',
         'complex-1-service-7': 'Кафе и зона с Wi‑Fi',
         'complex-1-service-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
         'complex-1-carwash-hours': 'Пон–Нед: 9:00–18:00',
@@ -124,7 +134,8 @@ const defaultTranslations = {
         'complex-2-address': 'кв. Кръстова вада, ул. „Манфред Вьорнер" 9, гр. София',
         'complex-2-service-1': 'Автосервиз',
         'complex-2-service-2': 'Гуми сервиз',
-        'complex-2-service-3': 'Аксесоари и тунинг части',
+        'complex-2-service-3': 'Продажба на масла',
+        'complex-2-service-4': 'Платен автопаркинг',
         'complex-2-hours': 'Пон–Пет: 8:30–17:30, Съб/Нед: Почивни',
         
         'complex-3-name': 'Авто Маями 3',
@@ -146,11 +157,11 @@ const defaultTranslations = {
         'complex-4-service-9': 'Лепене на спукани стъкла',
         'complex-4-service-10': 'Тунинг',
         'complex-4-service-11': 'Продажба на автомобили',
-        'complex-4-service-12': 'Аксесоари и тунинг части',
+        'complex-4-service-12': 'Продажба на масла',
         'complex-4-service-13': 'Кафе и зона с Wi‑Fi',
         'complex-4-service-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
         'complex-4-carwash-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
-        'complex-4-gtp-hours': 'Пон–Нед: 9:00–18:00',
+        'complex-4-gtp-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
         
         'service-phone-number': 'Телефон сервиз',
         'service-working-hours': 'Работно време сервиз',
@@ -173,13 +184,17 @@ const defaultTranslations = {
         
         // Language toggle
         'lang-bg': 'БГ',
-        'lang-en': 'EN'
+        'lang-en': 'EN',
+
+        'made-by': "Разработка от ",
+        'nl': "Никола Лазаров"
     },
     en: {
         // Navigation
         'nav-home': 'Home',
         'nav-services': 'Services',
         'nav-about': 'About Us',
+        'nav-ins': 'Insurance',
         'nav-gallery': 'Gallery',
         'nav-pricing': 'Pricing',
         'nav-complexes': 'Locations',
@@ -253,11 +268,20 @@ const defaultTranslations = {
         'svc-ins-f2': 'Аuto insurance',
         'svc-ins-f3': 'Auto assistance',
 
-        'svc-tyre-title': 'Tire Service',
-        'svc-tyre-desc': 'Modern equipment and skilled mechanics',
-        'svc-tyre-f1': 'Mounting, balancing, vulcanization',
-        'svc-tyre-f2': 'Seasonal changeover',
-        'svc-tyre-f3': 'Tire and rim sales on request',
+        'svc-oil-title': 'Import and sale of motor oils',
+        'svc-oil-desc': 'Wide selection of motor oils from leading global brands',
+        'svc-oil-f1': 'Oil importer',
+        'svc-oil-f2': 'Wholesale and retail sales',
+        'svc-oil-f3': 'Motor oils',
+        'svc-oil-f4': 'Transmission oils',
+        'svc-oil-f5': 'Hydraulic oils',
+        'svc-oil-f6': 'Gearbox oils and others',
+
+        // 'svc-tyre-title': 'Tire Service',
+        // 'svc-tyre-desc': 'Modern equipment and skilled mechanics',
+        // 'svc-tyre-f1': 'Mounting, balancing, vulcanization',
+        // 'svc-tyre-f2': 'Seasonal changeover',
+        // 'svc-tyre-f3': 'Tire and rim sales on request',
         
         // About Us
         'about-title': 'About Us',
@@ -304,6 +328,7 @@ const defaultTranslations = {
         'complex-2-service-1': 'Auto Service',
         'complex-2-service-2': 'Tire Service',
         'complex-2-service-3': 'Accessories & Tuning Parts',
+        'complex-2-service-4': 'Paid parking',
         'complex-2-hours': 'Mon-Fri: 8:30–17:30, Sat/Sun: Closed',
         
         'complex-3-name': 'Auto Miami 3',
@@ -327,7 +352,7 @@ const defaultTranslations = {
         'complex-4-service-11': 'Car Sales',
         'complex-4-service-12': 'Accessories & Tuning Parts',
         'complex-4-service-13': 'Coffee & Wi‑Fi Area',
-        'complex-4-gtp-hours': 'Mon-Sun: 9:00–18:00',
+        'complex-4-gtp-hours': 'Mon–Fri: 9:00–18:00, Sat/Sun: Closed',
         'complex-4-service-hours': 'Mon–Fri: 9:00–18:00, Sat/Sun: Closed',
         'complex-4-carwash-hours': 'Mon–Fri: 9:00–18:00, Sat/Sun: Closed',
         
@@ -352,7 +377,10 @@ const defaultTranslations = {
         
         // Language toggle
         'lang-bg': 'BG',
-        'lang-en': 'EN'
+        'lang-en': 'EN',
+
+        'made-by': "Developed by ",
+        'nl': "Nikola Lazarov"
     }
 };
 

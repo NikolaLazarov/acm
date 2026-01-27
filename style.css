@@ -423,7 +423,7 @@ a:hover {
   margin-right: 8px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 925px) {
   .language-toggle { display: none; }
   #hamburger {
     width: 100%;
@@ -482,7 +482,6 @@ a:hover {
   font-weight: 500;
   font-size: var(--font-size-xl);
   color: var(--color-black);
-  margin-left: 1.25rem;
 }
 
 .logo-container{
@@ -1502,13 +1501,7 @@ i + a {
   }
 }
 
-@media (max-width: 800px) {
-  :root {
-    --font-size-6xl: 2.8rem;
-    --font-size-5xl: 2.3rem;
-    --font-size-4xl: 2rem;
-  }
-  
+@media (max-width: 925px) {
   .nav-menu {
     display: none;
     position: fixed;
@@ -1530,6 +1523,15 @@ i + a {
   .nav-cta {
     display: none;
   }
+}
+
+@media (max-width: 800px) {
+  :root {
+    --font-size-6xl: 2.8rem;
+    --font-size-5xl: 2.3rem;
+    --font-size-4xl: 2rem;
+  }
+  
   
   .hero-features {
     flex-direction: column;
@@ -1657,7 +1659,7 @@ i + a {
 }
 
 /* Mobile header hide/show */
-@media (max-width: 800px) {
+@media (max-width: 925px) {
   #main-header {
     transform: translateY(0);
     border-radius: 5px 5px 0 0 !important;
