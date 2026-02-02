@@ -78,7 +78,7 @@ const defaultTranslations = {
         'svc-oil-title': 'Внос и продажба на моторни масла',
         'svc-oil-desc': 'Богат избор от моторни масла на водещи световни марки',
         'svc-oil-f1': 'Вносител на масла',
-        'svc-oil-f2': 'Продажба на едно и дребно',
+        'svc-oil-f2': 'Продажба на едро и дребно',
         'svc-oil-f3': 'Моторни масла',
         'svc-oil-f4': 'Трансмисионни масла',
         'svc-oil-f5': 'Хидравлични масла',
@@ -128,7 +128,7 @@ const defaultTranslations = {
         'complex-1-service-7': 'Кафе и зона с Wi‑Fi',
         'complex-1-service-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
         'complex-1-carwash-hours': 'Пон–Нед: 9:00–18:00',
-        'complex-1-gtp-hours': 'Пон–Нед: 9:00–18:00',
+        'complex-1-gtp-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
         
         'complex-2-name': 'Авто Маями 2',
         'complex-2-address': 'кв. Кръстова вада, ул. „Манфред Вьорнер" 9, гр. София',
@@ -164,6 +164,7 @@ const defaultTranslations = {
         'complex-4-gtp-hours': 'Пон–Пет: 9:00–18:00, Съб/Нед: Почивни',
         
         'service-phone-number': 'Телефон сервиз',
+        'damage-phone-number': 'Телефон ремонти по щети ТБО',
         'service-working-hours': 'Работно време сервиз',
         'carwash-phone-number': 'Телефон автомивка',
         'carwash-working-hours': 'Работно време автомивка',
@@ -358,6 +359,7 @@ const defaultTranslations = {
         
         'service-working-hours': 'Service working hours',
         'service-phone-number': 'Service phone number',
+        'damage-phone-number': 'Collision repairs & painting phone number',
         'carwash-working-hours': 'Carwash working hours',
         'carwash-phone-number': 'Carwash phone number',
         'gtp-working-hours': 'Annual Technical Inspection working hours',
