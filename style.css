@@ -1239,6 +1239,7 @@ a:hover {
 .complex-address { color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-md); }
 
 .complex-contacts p { color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-xs); display: flex; gap: 8px; align-items: center; }
+.complex-contacts a { color: rgba(255,255,255,0.9); margin-bottom: var(--spacing-xs); display: flex; gap: 8px; align-items: center; }
 .complex-services { list-style: disc; padding-left: var(--spacing-xl); color: rgba(255,255,255,0.9); margin: var(--spacing-md) 0; }
 
 .complex-map iframe {
