@@ -419,9 +419,6 @@ a:hover {
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   box-shadow: 0 6px 12px rgba(227, 30, 46, 0.3);
 }
-.lang-toggle-mobile {
-  /* margin-right: 8px; */
-}
 
 @media (max-width: 925px) {
   .language-toggle { display: none; }
@@ -480,7 +477,7 @@ a:hover {
 
 @media (max-width: 440px) {
   .message-container {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 
@@ -2060,6 +2057,20 @@ i + a {
   margin: 0 auto;
 }
 
+.documents-new-label {
+  display: block;
+  font-weight: 900;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.1em;
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  color: var(--color-black);
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
 .documents-main-text {
   color: var(--color-black);
   margin-bottom: var(--spacing-lg);
@@ -2110,8 +2121,12 @@ i + a {
   }
   
   .documents-main-text {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-sm);
     padding-right: 0;
+  }
+
+  .documents-new-label {
+    font-size: var(--font-size-lg);
   }
   
   .documents-other-title {
