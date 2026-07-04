@@ -7,6 +7,8 @@ const defaultTranslations = {
         'nav-gallery': 'Галерия',
         'nav-pricing': 'Цени',
         'nav-complexes': 'Сервизи',
+        'new-contract-desc': 'Автокомплекси МАЯМИ ООД имат сключен нов договор!',
+        'new-look-here': 'Вижте тук',
         
         'hero-title-1': 'ВСИЧКО ЗА',
         'hero-title-2': 'ВАШИЯ АВТОМОБИЛ',

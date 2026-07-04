@@ -420,7 +420,7 @@ a:hover {
   box-shadow: 0 6px 12px rgba(227, 30, 46, 0.3);
 }
 .lang-toggle-mobile {
-  margin-right: 8px;
+  /* margin-right: 8px; */
 }
 
 @media (max-width: 925px) {
@@ -451,6 +451,47 @@ a:hover {
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+
+.message-container
+{
+  margin-top: 9px;
+  background-color: #ffffff;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 0 2px 0 rgba(26, 27, 30, 0.18), 0 2px 4px 0 rgba(34, 36, 40, 0.16), 0 4px 6px 0 rgba(60, 63, 73, 0.14) !important;
+}
+
+@media (max-width: 600px) {
+  .message-container {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 510px) {
+  .message-container {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 440px) {
+  .message-container {
+    font-size: 10px;
+  }
+}
+
+#new-contract-desc {
+  font-weight: bold;
+  text-decoration: underline solid var(--color-primary) 2px;
+}
+
+#new-look-here {
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* .header-gradient-border {
@@ -467,6 +508,7 @@ a:hover {
 }
 
 .nav-container {
+  padding-top: 45px;
   -webkit-tap-highlight-color: transparent;
   outline: none;
   display: flex;
@@ -489,9 +531,7 @@ a:hover {
 }
 
 .logo-img {
-  margin-top: 5px;
   width: 60px;
-  height: 60px;
   zoom: 200%;
   object-fit: contain;
   transition: 500ms;
@@ -499,7 +539,6 @@ a:hover {
 
 .mobile-logo .logo-img{
   width: 50px !important;
-  height: 50px !important;
 }
 
 .logo-img-footer{
@@ -784,7 +823,7 @@ a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -1669,11 +1708,16 @@ i + a {
     box-shadow: none;
   }
   #main-header.hide {
-    transform: translateY(calc(-100% - 7px));
+    transform: translateY(calc(-100% - 40px));
   }
   .nav-container {
     gap: 16px;
     width: 100%;
+    padding-top: 37px;
+  }
+
+  .message-container {
+    margin-top: 0px;
   }
 
   .hamburger { 
@@ -1889,7 +1933,7 @@ i + a {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -2077,6 +2121,10 @@ i + a {
   .documents-link {
     font-size: var(--font-size-base);
     word-break: break-all;
+  }
+
+  .message-container {
+    margin-top: 2px
   }
 }
 
