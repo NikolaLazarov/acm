@@ -481,6 +481,12 @@ a:hover {
   }
 }
 
+@media (max-width: 370px) {
+  .message-container {
+    font-size: 9px;
+  }
+}
+
 #new-contract-desc {
   font-weight: bold;
   text-decoration: underline solid var(--color-primary) 2px;
