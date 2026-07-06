@@ -473,7 +473,6 @@ a:hover {
   gap: 8px;
   flex-shrink: 0;
   padding-right: 10px;
-  margin-right: 5px;
   border-right: 1px solid rgba(0, 0, 0, 0.12);
 }
 
@@ -540,7 +539,6 @@ a:hover {
   .eu-emblems {
     gap: 6px;
     padding-right: 8px;
-    margin-right: 4px;
   }
 
   .eu-funded-img {
