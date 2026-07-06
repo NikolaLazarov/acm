@@ -1865,8 +1865,8 @@ i + a {
   }
 
   .hero {
-    height: calc(100dvh - var(--header-total, 6.5rem));
-    padding-top: var(--header-total, 6.5rem);
+    height: calc(100dvh - 2rem);
+    padding-top: 8rem
   }
 }
 
