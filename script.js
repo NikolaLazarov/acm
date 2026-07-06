@@ -8,8 +8,9 @@ const defaultTranslations = {
     "nav-pricing": "Цени",
     "nav-complexes": "Сервизи",
     "new-label": "НОВО",
-    "new-contract-desc": "Автокомплекси МАЯМИ ООД имат сключен нов договор!",
+    "new-contract-desc": "Нов договор!",
     "new-look-here": "Вижте тук",
+    "eu-funding-label": "Съфинансирано от Европейския съюз",
 
     "hero-title-1": "ВСИЧКО ЗА",
     "hero-title-2": "ВАШИЯ АВТОМОБИЛ",
@@ -217,7 +218,8 @@ const defaultTranslations = {
     "nav-pricing": "Pricing",
     "nav-complexes": "Locations",
     "new-label": "NEW",
-    "new-contract-desc": "AutoComplex Miami Ltd. has signed a new contract!",
+    "new-contract-desc": "New contract!",
+    "eu-funding-label": "Co-funded by the European Union",
     "new-look-here": "View here",
 
     // Hero Section
@@ -457,6 +459,11 @@ function updatePageContent() {
   toggleButtons.forEach((btn) => {
     btn.textContent = currentLanguage === "bg" ? "EN" : "BG";
   });
+
+  const euFundedImg = document.getElementById("eu-funded-img");
+  if (euFundedImg && translations[currentLanguage]["eu-funding-label"]) {
+    euFundedImg.alt = translations[currentLanguage]["eu-funding-label"];
+  }
 }
 
 function initLanguageSystem() {
@@ -484,7 +491,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const header = document.getElementById("main-header");
   const mainLogo = document.getElementById("logo-img");
-  const headerHeight = header.offsetHeight;
+  let headerHeight = header.offsetHeight;
+
+  function updateMobileHeaderHeight() {
+    if (!header) return;
+    headerHeight = header.offsetHeight;
+    document.documentElement.style.setProperty(
+      "--mobile-header-total",
+      `${headerHeight}px`
+    );
+    document.documentElement.style.setProperty(
+      "--header-total",
+      `${headerHeight}px`
+    );
+  }
+
+  updateMobileHeaderHeight();
+  window.addEventListener("load", updateMobileHeaderHeight);
+  document.querySelectorAll(".eu-funded-img, .pkip-logo-img").forEach((img) => {
+    if (!img.complete) img.addEventListener("load", updateMobileHeaderHeight);
+  });
 
   // Desktop curved header state
   function onScrollDesktop() {
@@ -525,6 +551,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", handleScroll, { passive: true });
   window.addEventListener("resize", () => {
+    updateMobileHeaderHeight();
     // Reset states appropriately on resize
     if (window.innerWidth <= 800) {
       header.classList.remove("scrolled");
